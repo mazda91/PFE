@@ -12,6 +12,7 @@
 \usepackage{hangcaption}
 \usepackage{listings}
 \usepackage[latin1]{inputenc}
+\usepackage{eurosym}
 
 %\fbox{}
 %\shadowbox{}
@@ -54,7 +55,7 @@ Grenoble INP  -- ENSIMAG\\
 \vspace{3cm}
 {\LARGE Rapport de projet de fin d'études}\\
 \vspace{1cm}
-Effectué chez Cairn, Monnaie Locale et Citoyenne de Grenoble\\
+Effectué chez Cairn, Monnaie Locale Complémentaire et Citoyenne de Grenoble\\
 \vspace{2cm}
 \shadowbox{
 \begin{minipage}{1\textwidth}
@@ -67,7 +68,7 @@ Effectué chez Cairn, Monnaie Locale et Citoyenne de Grenoble\\
 Mazouth--Laurol Maxime\\
 3e année -- Option MMIS\\
 \vspace{3mm}
-15 février 2018 -- 15 août 2018\\
+22 février 2018 -- 15 août 2018\\
 \vspace{3cm}
 \begin{tabular}{p{10cm}p{10cm}}
 {\bf Le Cairn, Monnaie Locale et Citoyenne}                                            &{\bf Responsable de stage}\\
@@ -77,4 +78,220 @@ Mazouth--Laurol Maxime\\
 \end{tabular}
 \end{center}
 \newpage
+
+\tableofcontents
+
+
+\newpage
+\begin{center}
+\textbf{Résumé} \\
+aaaaa
+\end{center}
+
+\section{Coeur du rapport} \label{sec:coeur}
+Introduction de la problématique et des objectifs
+
+\subsection{Contexte du stage} \label{sec:subsec:contexte}
+~~ Une monnaie locale complémentaire(\textbf{MLC}) est un titre de paiement qui circule dans une zone délimitée. Les professionnels du réseau sont choisis dans le respect de la Charte des valeurs, pierre fondatrice de l'Association. Les éléments principaux de cette Charte sont les suivants :
+\begin{itemize}
+\item Favoriser l'activité économique locale
+\item Dynamiser l'économie réelle et résister à la spéculation
+\item Soutenir la transition énergétique  
+\item Rétablir une gouvernance citoyenne de la monnaie
+\item Établir la confiance et encourager l'entraide entre tous les utilisateurs
+\end{itemize}
+
+Les euros sont échangés avec des unités de MLC en bureau de change, avec une parité fixe : 1\euro  = 1 mlc. En ce sens, la monnaie est "complémentaire de l'euro", et ne lui fait donc pas de concurrence. Une fois ces unités acquises, le particulier/professionnel peut les échanger contre des biens ou services auprès d'autres professionnels du réseau. Ce processus étant répété d'utilisateur à utilisateur, un cercle économique vertueux de consommation responsable se met en place, alimentant l'économie réelle et locale. \\
+
+L'Association Le Cairn fonctionne grâce à un système de gouvernance partagée dont les différentes structures internes sont :
+\begin{itemize}
+\item les comités décisionnels : 
+	\begin{itemize}
+	\item comité d'orientation : Il se réunit quatre fois par an et concerne tous les adhérents de l'association. Il définit les grandes orientations de l'Association et donne à chacun la liberté de parole. Le prochain, qui aura lieu le 5 avril, a pour thème central la monnaie électronique.
+	\item comité de pilotage et comité de suivi
+	\item le groupe de vitalité démocratique
+	\end{itemize}
+\item les groupes locaux : ensemble d'adhérents d'une ville appartenant au territoire du Cairn
+\item les groupes de travail transversaux : réunion d'adhérents par thématique (réseau de partenaires pro, communication externe-sensibilisation, monnaie électronique, ...)
+\end{itemize}
+
+La mission du Cairn est donc, d'un point de vue pratique, le développement jusqu'à auto-suffisance de la monnaie sur le territoire. Cependant, elle a également un rôle d'éveil des consciences sur les fondements de notre économie et la responsabilisation du citoyen:
+\begin{itemize}
+\item Se poser des questions : Qu'est ce qu'une monnaie ? Pourquoi une monnaie locale prétend valoriser l'économie réelle ? A quel problème une telle initiative s'attaque-t'elle  ? Comment fonctionne le système économique/financier actuel ? 
+
+\item Prendre conscience de son rôle de consommateur : les commerces du réseau respectent la charte de valeurs de l'association, charte à laquelle tout citoyen adhère ou non. Cela permet de prendre conscience que chaque achat est un moyen de favoriser une entreprise en fonction des valeurs prônées par les parties prenantes.
+
+\item conscience écologique : une consommation locale issue d'une production locale réduit nécessairement les coûts liés aux transports, et donc impacte la consommation énergétique. C'est aussi amener à réfléchir à la consommation/production d'un point de vue systémique : en plus du produit fini en boutique, tout un processus de production est mis en place, et doit être considéré.
+\end{itemize}
+
+%\subsection{Problématique du projet} \label{sec:subsec:problématique}
+%\textbf{Contexte du projet} \\
+Le projet dans lequel s'inscrit ce stage est la suite logique du développement de la monnaie à l'échelle locale. Lancée en octobre 2017, la monnaie est à ce jour disponible uniquement sous forme de coupons billet, ce qui bloque l'intégration au réseau d'acteurs économiques majeurs pour lesquels l'utilisation du liquide est inenvisageable en raison des sommes en jeu (Gaz et Electricité de Grenoble, MangerBio Isère, transports SEMITAG, ...). De plus, il est primordial pour la monnaie de circuler de manière fluide dans la région afin de créer un cercle économique vertueux. Il faut donc faciliter les paiements entre les professionnels et leurs fournisseurs et/ou prestataires de services afin de compléter le réseau d'acteurs. En effet, un professionnel ne pouvant dépenser ses cairns (pas de fournisseur et/ou prestataire intéressant dans le réseau) devra les accumuler ou les reconvertir en euros, ce qui doit à tout prix être éviter. Enfin, l'acquisition de cairns s'effectuant dans un bureau de change, une version dématérialisée permettrait aux utilisateurs de recharger leur compte cairn directement depuis l'outil numérique, et ainsi d'éviter de se déplacer avec des sommes conséquentes en liquide.  \\
+
+%C'est pourquoi la mise en place d'une version électronique est prépondérente. L'objectif n°1 
+Dans ce contexte, et pour répondre aux problématiques énoncées ci-dessus, le travail à réaliser est la mise en place, pour les professionnels, d'un outil de paiement dématérialisé : paiement en ligne via un site web dédié. \\ \\
+\textbf{Les objectifs attendus}
+Afin de bien cerner les objectifs du projet, un périmètre fonctionnel  initial a été défini.
+\paragraph{Utilisateurs} ~\\
+Deux types d'utilisateurs seront pris en charge :
+\begin{itemize}
+\item les professionnels (entreprises, associations, ...) adhérents au Cairn
+\item l'administrateur (l'association Cairn)
+\end{itemize}
+
+\paragraph{Fonctionnalités requises} ~\\
+	\begin{itemize}
+	\item Initialisation
+		\begin{itemize}
+	    \item l'administrateur peut créer son compte, ou se voit affecter un compte.
+		\item l'administrateur peut ouvrir ou fermer l'accès à la plateforme pour les autres utilisateurs (maintenance, ...)
+		\end{itemize}
+	\item Création d'espace membre
+		\begin{itemize}
+		\item Un professionnel peut s'enregistrer sur la plateforme. L'administrateur doit valider/refuser cet enregistrement.
+		\item l'administrateur peut enregistrer un professionnel
+		\item les données requises sont le nom du professionnel, une courte description, son adresse physique, une adresse email et un mot de passe suffisamment complexe.
+		\item ces données sont modifiables à tout moment.
+		\end{itemize}
+	\item ouverture d'un compte cairn
+		\begin{itemize}
+		\item seul l'administrateur peut ouvrir un compte cairn associé à un espace membre.
+		\item à chaque compte cairn ouvert est associé un "RIB cairn" unique
+		\end{itemize}
+	\item fermeture d'un compte cairn
+		\begin{itemize}
+		\item l'administrateur peut fermer un compte cairn associé à un espace membre.
+		\item l'administrateur est prévenu en cas de solde non nul
+		\item l'administrateur ne peut fermer un compte que si le solde est nul
+		\item Une confirmation de la demande de fermeture est demandée
+		\item Toutes les données relatives au compte fermé sont supprimées
+		\end{itemize}
+	\item fermeture d'un espace membre
+		\begin{itemize}
+		\item l'administrateur peut fermer un espace membre si aucun compte cairn n'est lié.
+		\item Un professionnel peut fermer son propre espace membre si aucun compte cairn n'est lié.
+		\end{itemize}
+	\item gestion des données relatives à un compte cairn ouvert. tous les professionnels peuvent :
+		\begin{itemize}
+		\item ajouter un bénéficiaire dans la liste des favoris
+		\begin{itemize}
+			\item ajout via RIB Cairn
+			\item ajout via une recherche (mail, nom, ...)
+			\item ajout via un historique de transaction
+		\end{itemize}
+		\item supprimer un bénéficiaire dans la liste des favoris
+		\item Relevé de compte / historique
+			\begin{itemize}
+			\item affichage du solde à la date du jour
+			\item affichage par défaut des 20 dernières transactions (date, montant débit/crédit, intitulé, partenaire associé) 
+			\item pagination au delà (20 par page)
+			\item afficher le détail d'une transaction (+ heure du jour + motif long)
+			\item filtrage par dates (début, fin) utilisateurs (créditeur, débiteur) et montant des résultats
+			\item téléchargement de l'historique filtré (PDF)
+			\item téléchargement d'un relevé de compte date du jour (solde + dernières transactions) (PDF)
+			\end{itemize}
+		\item récupération du RIB cairn (PDF)
+		\end{itemize}
+	\item réalisation d'une transaction (virement). 
+	tous les professionnels peuvent :
+			\begin{itemize}
+			\item rechercher un bénéficiaire (nom, email)
+			\item sélection du bénéficiaire à créditer (via recherche, liste des favoris ou RIB Cairn)
+			\item remplir un formulaire
+				\begin{itemize}
+				\item choix du montant cairn
+				\item choix de l'intitulé (court)
+				\item choix du motif (long)
+				\end{itemize}
+			\item confirmation de la transaction (+ un email est envoyé aux protagonistes)
+			\end{itemize}
+		\item faire une demande de débit (prélèvement). 
+		tous les professionnels peuvent :
+			\begin{itemize}
+			\item rechercher un débiteur (nom, email)
+			\item sélection du débiteur (via recherche, liste des favoris ou RIB Cairn)
+			\item remplir un formulaire
+				\begin{itemize}
+				\item choix du montant cairn
+				\item choix de l'intitulé (court)
+				\item choix du motif (long)
+				\end{itemize}
+			\item confirmation de la demande de débit.
+			\item voir les demandes de débit en cours (créditeur et débiteur)
+			\item annuler une demande de débit réalisé (+ un email est envoyé au débiteur)
+			\item refuser une demande de débit qui lui est adressée (+ un email est envoyé au créditeur)
+			\end{itemize}
+			\item L'association le Cairn possède un compte professionnel depuis lequel elle réalise les opérations nécessaires à la vie de la monnaie (débit, crédit, ...)
+	\item sécurité
+		\begin{itemize}
+		\item Les transactions sont sécurisées : HTTPS, ...
+		\item Les failles connues : XSS, injections SQL.. sont bloquées
+		\item Des Mots de passe "compliqués" sont requis
+		\end{itemize}
+	\item performances
+		\begin{itemize}
+		\item bon fonctionnement de l'application en conditions réelles 
+		\item bon fonctionnement de l'application en cas d'affluence anormalement élevée
+		\end{itemize}
+	\item compatibilité
+		\begin{itemize}
+		\item L'interface doit fonctionner sur tous les navigateurs web desktop et mobile modernes (ie10+)
+		\end{itemize}
+	\item ergonomie
+			\begin{itemize}
+		\item L'interface doit être simple et épurée
+		\item L'approche sera "mobile first"
+		\item L'application doit s'adapter à la taille des écrans mobile > tablette > desktop (responsive design)
+		\end{itemize}
+	\end{itemize}
+	
+\paragraph{Retroplanning} ~\\
+		\begin{itemize}
+		\item Une version beta devra être livrée début juin
+		\item la livraison prod de la V1 est souhaitable fin juin
+		\end{itemize}
+		
+\subsection{Etat d'avancement}
+\begin{itemize}
+\item mobilisation de bénévoles autour du sujet
+\item formation web
+\item prise en main outil Cyclos
+\item premiers contacts avec CNIL
+\item partenariat Pousada
+\item attente de validation par le Comité d'Orientation le 5 avril
+\end{itemize}
+
+\section{Les solutions techniques}
+\subsection{Impressions personnelles}
+\textbf{Difficultés rencontrées} \\
+difficultés liées à l'auto-formation web : prise en main d'outils en local\\
+difficultés liées à la compréhension des enjeux/priorités, liées au fait que l'asso est encore assez jeune et le cadre est encore en construction à tous les niveaux : priorisation de la mutualisation ou travailler en solo ? // comment gérer les bureaux de change ?
+Le projet dans lequel je m'inscris à la base est plein de questions, ce qui différencie grandement ce stage des projets ensimag bien cadrés.
+\textbf{Difficultés à venir}  \\
+gestion des bénévoles/ éventuelle répartition de tâches / conservation d'une dynamique de groupe : outils de suivi (mattermost / github) + quelques réunions physiques \\
+mise en place pas mal de bonnes pratiques que ce soit au niveau technologies, tests, infra ou encore méthodes agiles \\
+gestion du temps
+
+\textbf{Enseignements tirés à ce stade}
+Gestion de projet : importance de la création d'une dynamique de groupe (réflexion sur l'outil plus que le dév en lui-même pour l'instant) : connaître ses partenaires pour tirer le meilleur de chacun d'eux et de leurs compétences \\
+importance de maîtriser les interfaces entre les différentes parties prenantes du projet : partenariat Trézo'rezo / besoin des partenaires pro / objectif de mutualisation des technos/ possibilités offertes par l'outil choisi / budget accordé au projet / possibilités de financement / cadre juridique de la monnaie + éthique des données (GDPR) + dossier ACPR \\
+\newpage
+\section{Les impacts du projet} \label{sec:impacts}
+\subsection{Impact sociétal} %\label{sec:subsec:sociétal}
+L'impact sociétal du Projet de Fin d'Etudes se situe essentiellement dans le potentiel de développement du réseau et la fluidification de la circulation et des conversions.  En effet, des professionnels \\
+
+engager des plus grosses sommes \\ 
+sécurité \\
+En envisageant un processus de suivi des données des utilisateurs dans une mesure à définir, des surplus d'accumulation de cairns dans le réseau pourraient être détectés, de repérer des "bouts de chaîne" dans le réseau et ainsi éventuellement mettre en relation des partenaires du réseau afin de fluidifier la circulation. En cela, l'impact sociétal du projet est fort de sens.
+
+De plus, l'outil de paiement électronique pourrait permettre un meilleur suivi de la masse monétaire en circulation, et ainsi une meilleure régulation en envisageant, par exemple, une augmentation temporaire des taxes à la transaction, des cotisations périodiques des entreprises partenaires..
+
+De plus, il s'agira d'un argument de poids dans le processus de démarchage des professionnels par le groupe de travail "Réseau des partenaires pros".
+
+\subsection{Impact environnemental} %\label{sec:subsec:environnement}
+La consommation énergétique à ce jour est celle de fonctionnement de l'ordinateur personnel. Les futurs coûts seront, d'une part, ceux de fonctionnement du serveur web, hébergé chez PHPNet, société française proposant des services d'hébergement,accentuant fortement sa communication sur l'aspect écologique, notamment grâce à son partenariat avec l'option Energie renouvelable de GEG. D'autre part, il est envisagé un déplacement au Pays-Basque afin de rencontrer l'équipe ayant mis en place l'outil de paiement dématérialisé de l'Eusko (MLC de la région), étant donné qu'ils l'ont développé avec l'outil Cyclos. \\ \\
+
+Enfin, l'objectif du CAIRN étant le développement de l'économie locale et donc des circuits courts, la politique mise en place est, de facto, en faveur du développement durable. En effet, circuits courts impliquent nécessairement la réduction des outils d'acheminement des produits vers les villes, la réduction du nombre d'intermédiaires entre producteurs et consommateurs. De plus, cette thématique est centrale dans la charte de valeurs de l'association, à laquelle doit adhérer tout professionnel s'il veut faire partie du réseau. Via cette sélection, l'utilisation de la monnaie locale filtre notre mode de consommation en le restreignant au réseau.
 \end{document}
+
+
