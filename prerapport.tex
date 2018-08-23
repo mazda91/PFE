@@ -14,6 +14,8 @@
 \usepackage[latin1]{inputenc}
 \usepackage{eurosym}
 
+\renewcommand{\contentsname}{Table des matières}
+
 %\fbox{}
 %\shadowbox{}
 %\doublebox{}
@@ -68,7 +70,7 @@ Effectué chez Cairn, Monnaie Locale Complémentaire et Citoyenne de Grenoble\\
 Mazouth--Laurol Maxime\\
 3e année -- Option MMIS\\
 \vspace{3mm}
-22 février 2018 -- 15 août 2018\\
+22 février 2018 -- 22 août 2018\\
 \vspace{3cm}
 \begin{tabular}{p{10cm}p{10cm}}
 {\bf Le Cairn, Monnaie Locale et Citoyenne}                                            &{\bf Responsable de stage}\\
@@ -80,19 +82,18 @@ Mazouth--Laurol Maxime\\
 \newpage
 
 \tableofcontents
-
+\listoffigures
 
 \newpage
-\begin{center}
-\textbf{Résumé} \\
-aaaaa
-\end{center}
 
-\section{Coeur du rapport} \label{sec:coeur}
-Introduction de la problématique et des objectifs
+\section{Introduction} \label{sec:intro}
+~~ La monnaie locale du bassin de vie grenoblois, le cairn, d'association éponyme, cherche à étendre son réseau d'acteurs et à diversifier ses possibilités d'utilisation. Disponible à ce jour sous forme de coupons-billet uniquement, l'objectif de ce stage est la mise en place d'un outil de monnaie dématérialisé B2B full web, permettant l'ouverture du réseau à des professionnels n'acceptant pas le liquide. L'Association souhaite être un prestataire de service de paiement indépendant, et non pas agent d'un prestataire de service extérieur. \\ 
 
-\subsection{Contexte du stage} \label{sec:subsec:contexte}
-~~ Une monnaie locale complémentaire(\textbf{MLC}) est un titre de paiement qui circule dans une zone délimitée. Les professionnels du réseau sont choisis dans le respect de la Charte des valeurs, pierre fondatrice de l'Association. Les éléments principaux de cette Charte sont les suivants :
+L'outil doit assurer la plupart des services bancaires classiques - transaction, consultation de compte, conversion entre devises -  mais doit aussi, à terme, faciliter et améliorer l'analyse de la vitesse d'émission, de circulation de la monnaie ainsi que ses circuits préférentiels. \\ 
+
+\subsection{Les monnaies locales complémentaires en France} \label{sec:subsec:mlc}
+\paragraph{Principe}
+~~ Une monnaie locale complémentaire(\textbf{MLC}) est un titre de paiement qui circule dans une zone délimitée par le Schéma de Cohérence Territorial(\textbf{SCoT}). Les professionnels du réseau sont choisis dans le respect de la Charte des valeurs, pierre fondatrice de l'Association. Les éléments principaux de cette charte sont les suivants :
 \begin{itemize}
 \item Favoriser l'activité économique locale
 \item Dynamiser l'économie réelle et résister à la spéculation
@@ -101,46 +102,61 @@ Introduction de la problématique et des objectifs
 \item Établir la confiance et encourager l'entraide entre tous les utilisateurs
 \end{itemize}
 
-Les euros sont échangés avec des unités de MLC en bureau de change, avec une parité fixe : 1\euro  = 1 mlc. En ce sens, la monnaie est "complémentaire de l'euro", et ne lui fait donc pas de concurrence. Une fois ces unités acquises, le particulier/professionnel peut les échanger contre des biens ou services auprès d'autres professionnels du réseau. Ce processus étant répété d'utilisateur à utilisateur, un cercle économique vertueux de consommation responsable se met en place, alimentant l'économie réelle et locale. \\
+Les euros sont échangés avec des unités de MLC en comptoir de change, avec une parité fixe : 1\euro  = 1 mlc. En ce sens, la monnaie est dite "complémentaire de l'euro", ne lui faisant pas de concurrence. Une fois ces unités acquises, le particulier/professionnel peut les échanger contre des biens ou services auprès d'autres professionnels du réseau. Ce processus étant répété d'utilisateur à utilisateur, un cercle économique vertueux de consommation responsable se met en place, alimentant l'économie réelle et locale. \\ 
 
-L'Association Le Cairn fonctionne grâce à un système de gouvernance partagée dont les différentes structures internes sont :
+\paragraph{Dynamique}
+L'engouement lié aux monnaies locales complémentaires ne cesse de croître en France, en témoigne leur nombre, et une législation qui les intègre de plus en plus. Il est donc nécessaire et profitable de créer une dynamique de mutualisation, de coopération et de réflexion commune en partageant les richesses de chacune. C'est l'objectif que s'est donné le mouvement SOL, association née d'initiatives citoyennes sur différents territoires. Ainsi, elle cherche à communiquer, redistribuer, former sur les différents aspects de la gestion d'une monnaie, dont les outils numériques font partie, et notamment la mise en place d'une monnaie dématérialisée, tout en permettant à chaque monnaie locale de garder sa propre gestion.
+
+\subsection{Contexte du stage} \label{sec:subsec:contexte}
+\paragraph{Fonctionnement associatif}
+Plus particulièrement, l'Association Le Cairn fonctionne grâce à un système de gouvernance partagée dont les différentes structures internes, toutes bénévoles, sont :
 \begin{itemize}
 \item les comités décisionnels : 
 	\begin{itemize}
-	\item comité d'orientation : Il se réunit quatre fois par an et concerne tous les adhérents de l'association. Il définit les grandes orientations de l'Association et donne à chacun la liberté de parole. Le prochain, qui aura lieu le 5 avril, a pour thème central la monnaie électronique.
-	\item comité de pilotage et comité de suivi
-	\item le groupe de vitalité démocratique
+	\item comité d'orientation : Il se réunit quatre fois par an et concerne tous les adhérents de l'association qui souhaitent y participer. Il définit les décisions stratégiques de l'Association et donne à chacun la liberté de parole. Celui du 5 avril 2018 a eu pour thème central la monnaie électronique.
+	\item comité de pilotage : Il se réunit tous les mois,  composé de représentants des utilisateurs et des professionnels, est élu chaque année lors d'un comité d'orientation. Il définit les décisions opérationnelles de l'Association.
 	\end{itemize}
-\item les groupes locaux : ensemble d'adhérents d'une ville appartenant au territoire du Cairn
-\item les groupes de travail transversaux : réunion d'adhérents par thématique (réseau de partenaires pro, communication externe-sensibilisation, monnaie électronique, ...)
+\item les groupes locaux : collectif d'adhérents d'un regroupement de villes appartenant au territoire du Cairn. Il se fait le relais de l'Association sur le terrain. Chaque groupe local doit avoir un membre appartenant au comité de pilotage, se faisant ainsi son porte-parole. Chaque groupe local prend notamment la décision finale d'intégrer ou non un professionnel dans le réseau.
+\item les groupes de travail transversaux : réunion d'adhérents par thématique selon les besoins de l'Association(réseau de partenaires professionnels, communication externe-sensibilisation, monnaie électronique, ...). Ils partagent leurs travaux au Comité d'Orientation lorsqu'il y a des décisions à prendre.
 \end{itemize}
-
+Quelle que soit l'instance, les décisions respectent le principe de consensus. \\ \\
 La mission du Cairn est donc, d'un point de vue pratique, le développement jusqu'à auto-suffisance de la monnaie sur le territoire. Cependant, elle a également un rôle d'éveil des consciences sur les fondements de notre économie et la responsabilisation du citoyen:
 \begin{itemize}
-\item Se poser des questions : Qu'est ce qu'une monnaie ? Pourquoi une monnaie locale prétend valoriser l'économie réelle ? A quel problème une telle initiative s'attaque-t'elle  ? Comment fonctionne le système économique/financier actuel ? 
+\item Se poser des questions sur notre économie: Qu'est ce qu'une monnaie ? Pourquoi une monnaie locale prétend valoriser l'économie réelle ? A quel problème une telle initiative s'attaque-t'elle  ? Comment fonctionne le système économique/financier actuel ? 
 
 \item Prendre conscience de son rôle de consommateur : les commerces du réseau respectent la charte de valeurs de l'association, charte à laquelle tout citoyen adhère ou non. Cela permet de prendre conscience que chaque achat est un moyen de favoriser une entreprise en fonction des valeurs prônées par les parties prenantes.
 
 \item conscience écologique : une consommation locale issue d'une production locale réduit nécessairement les coûts liés aux transports, et donc impacte la consommation énergétique. C'est aussi amener à réfléchir à la consommation/production d'un point de vue systémique : en plus du produit fini en boutique, tout un processus de production est mis en place, et doit être considéré.
 \end{itemize}
 
+\paragraph{Le réseau} A ce jour, plus de 1000 adhérents utilisateurs, près de 200 professionnels font partie du réseau.
 %\subsection{Problématique du projet} \label{sec:subsec:problématique}
 %\textbf{Contexte du projet} \\
-Le projet dans lequel s'inscrit ce stage est la suite logique du développement de la monnaie à l'échelle locale. Lancée en octobre 2017, la monnaie est à ce jour disponible uniquement sous forme de coupons billet, ce qui bloque l'intégration au réseau d'acteurs économiques majeurs pour lesquels l'utilisation du liquide est inenvisageable en raison des sommes en jeu (Gaz et Electricité de Grenoble, MangerBio Isère, transports SEMITAG, ...). De plus, il est primordial pour la monnaie de circuler de manière fluide dans la région afin de créer un cercle économique vertueux. Il faut donc faciliter les paiements entre les professionnels et leurs fournisseurs et/ou prestataires de services afin de compléter le réseau d'acteurs. En effet, un professionnel ne pouvant dépenser ses cairns (pas de fournisseur et/ou prestataire intéressant dans le réseau) devra les accumuler ou les reconvertir en euros, ce qui doit à tout prix être éviter. Enfin, l'acquisition de cairns s'effectuant dans un bureau de change, une version dématérialisée permettrait aux utilisateurs de recharger leur compte cairn directement depuis l'outil numérique, et ainsi d'éviter de se déplacer avec des sommes conséquentes en liquide.  \\
+Le projet dans lequel s'inscrit ce stage est la suite logique du développement de la monnaie à l'échelle locale. Lancée en octobre 2017, la monnaie est à ce jour disponible uniquement sous forme de coupons billet, ce qui bloque l'intégration au réseau d'acteurs économiques majeurs pour lesquels l'utilisation du liquide est inenvisageable en raison des sommes en jeu (Gaz et Electricité de Grenoble, MangerBio Isère, transports SEMITAG, ...). De plus, il est primordial pour la monnaie de circuler de manière fluide dans la région afin de créer un cercle économique vertueux. Il faut donc faciliter les paiements entre les professionnels et leurs fournisseurs et/ou prestataires de services afin de compléter le réseau d'acteurs. En effet, un professionnel ne pouvant dépenser ses cairns (pas de fournisseur et/ou prestataire intéressant dans le réseau) devra les accumuler ou les reconvertir en euros si sa trésorerie ne lui permet pas de patienter, ce qui doit à tout prix être éviter. Enfin, l'acquisition de cairns s'effectuant dans un bureau de change en ville, l'idée de devoir se déplacer avec des sommes conséquentes en liquide peut s'avérer être une force d'inertie à l'échange, et donc au bon fonctionnement de la monnaie.  \\
 
-%C'est pourquoi la mise en place d'une version électronique est prépondérente. L'objectif n°1 
-Dans ce contexte, et pour répondre aux problématiques énoncées ci-dessus, le travail à réaliser est la mise en place, pour les professionnels, d'un outil de paiement dématérialisé : paiement en ligne via un site web dédié. \\ \\
+\paragraph{Le modèle économique de l'Association}
+~~ L'Association, encore jeune et fragile économiquement, investit dans le recrutement d'un stagiaire ainsi qu'une solution logicielle attribuée au développement de la monnaie numérique. Dans ce cadre, la possibilité d'auto-financement grâce à des frais de gestion de comptes et une taxe à la transaction pour les paiements C2B est envisagée afin de compenser notamment un éventuel coût de la solution logicielle. \\
+De plus, un partenariat avec la Pousada (Pôle entrepreneurial et de coopération de Grenoble) qui, par le biais du projet Trézo Rezo souhaite mettre en place un système Barter(Réseau local de troc inter-entreprises), est envisagé. Les possibilités d'interaction avec le réseau du CAIRN sont multiples : 
+\begin{itemize}
+\item simple mise en commun des réseaux d'entreprises
+\item conversion entre unités de compte réseau du barter(UCR) et cairns ?
+\end{itemize} 
+Les sources de financement de la Pousada étant bien supérieures à celles du CAIRN (financement par les entreprises intéressées), une telle contribution pourrait soulager l'Association d'une partie de la licence. \\ \\
+
+
+
+\subsection{Problématique et périmètre fonctionnel} 
+\label{sec:subsec:problem}
+Dans ce contexte, et pour répondre aux problèmes énoncés ci-dessus, le travail à réaliser est la mise en place, pour les professionnels et l'Association, d'un outil de paiement dématérialisé : paiement en ligne via un site web dédié. \\ \\
 \textbf{Les objectifs attendus}
-Afin de bien cerner les objectifs du projet, un périmètre fonctionnel  initial a été défini.
-\paragraph{Utilisateurs} ~\\
-Deux types d'utilisateurs seront pris en charge :
+Afin de cerner les objectifs du projet, un périmètre fonctionnel initial a été défini.  
+Deux types d'utilisateurs sont considérés :
 \begin{itemize}
 \item les professionnels (entreprises, associations, ...) adhérents au Cairn
 \item l'administrateur (l'association Cairn)
 \end{itemize}
 
-\paragraph{Fonctionnalités requises} ~\\
-	\begin{itemize}
+\begin{itemize}
 	\item Initialisation
 		\begin{itemize}
 	    \item l'administrateur peut créer son compte, ou se voit affecter un compte.
@@ -148,7 +164,7 @@ Deux types d'utilisateurs seront pris en charge :
 		\end{itemize}
 	\item Création d'espace membre
 		\begin{itemize}
-		\item Un professionnel peut s'enregistrer sur la plateforme. L'administrateur doit valider/refuser cet enregistrement.
+		\item Un professionnel peut s'enregistrer sur la plateforme. La demande d'inscription peut être validée/refusée par l'administrateur.
 		\item l'administrateur peut enregistrer un professionnel
 		\item les données requises sont le nom du professionnel, une courte description, son adresse physique, une adresse email et un mot de passe suffisamment complexe.
 		\item ces données sont modifiables à tout moment.
@@ -161,8 +177,7 @@ Deux types d'utilisateurs seront pris en charge :
 	\item fermeture d'un compte cairn
 		\begin{itemize}
 		\item l'administrateur peut fermer un compte cairn associé à un espace membre.
-		\item l'administrateur est prévenu en cas de solde non nul
-		\item l'administrateur ne peut fermer un compte que si le solde est nul
+		\item l'administrateur ne peut fermer un compte que si le solde est nul, et est prévenu le cas échéant.
 		\item Une confirmation de la demande de fermeture est demandée
 		\item Toutes les données relatives au compte fermé sont supprimées
 		\end{itemize}
@@ -243,55 +258,455 @@ Deux types d'utilisateurs seront pris en charge :
 		\item L'approche sera "mobile first"
 		\item L'application doit s'adapter à la taille des écrans mobile > tablette > desktop (responsive design)
 		\end{itemize}
-	\end{itemize}
-	
+\end{itemize}
+
+Bien que non précisé dans le périmètre fonctionnel, le modèle économique de l'Association ainsi qu'une vision du projet à long terme doit être considéré dans les choix logiciels. Etant donné le fonctionnement bénévole, le projet doit être facilement maintenable par des développeurs ne pouvant en avoir une expertise complète.
 \paragraph{Retroplanning} ~\\
 		\begin{itemize}
 		\item Une version beta devra être livrée début juin
 		\item la livraison prod de la V1 est souhaitable fin juin
 		\end{itemize}
 		
-\subsection{Etat d'avancement}
+
+%\section{Les solutions techniques étudiées ou mises en oeuvre}
+%Le mouvement SOL regroupe de nombreuses monnaies locales en France. Bien qu'un objectif de mutualisation des technologies ait été annoncé, différentes solutions ont été mises en place au sein du réseau. De plus, plusieurs prestataires externes ont été identifiés et manifestent un intérêt pour les MLC.
+
+\section{L'application web} \label{sec:solution}
+\subsection{La solution logicielle de gestion de paiements : Cyclos}
+\label{sec:subsec:cyclos}
+\paragraph{Présentation}
+La solution logicielle retenue pour la gestion des paiements se nomme Cyclos. Elle répond à l'ensemble des spécifications concernant la gestion des paiements décrites dans le périmètre fonctionnel du stage (\ref{sec:subsec:problem}), mais aussi aux objectifs et au modèle économique potentiel(long terme) ainsi qu'à la possibilité de partage avec d'autres associations(\ref{sec:subsec:contexte}). Logiciel de paiement en ligne faisant partie du réseau des Organisations de commerce social (STRO), Cyclos propose de nombreuses fonctionnalités utiles à plusieurs types d'institutions : banques, systèmes barters, monnaies locales... Elle compte plus de 1500 systèmes de paiement à son actif. \\
+Il existe plusieurs versions de Cyclos disponibles à ce jour, avec des avantages et des inconvénients différents : 
 \begin{itemize}
-\item mobilisation de bénévoles autour du sujet
-\item formation web
-\item prise en main outil Cyclos
-\item premiers contacts avec CNIL
-\item partenariat Pousada
-\item attente de validation par le Comité d'Orientation le 5 avril
+\item Cyclos 3 est une version libre, mais n'est plus maintenue
+\item Cyclos 4 est une version propriétaire, dont il est possible de récupérer la base de données pour exploitation, maintenue à jour par la société.
 \end{itemize}
 
-\section{Les solutions techniques}
-\subsection{Impressions personnelles}
-\textbf{Difficultés rencontrées} \\
-difficultés liées à l'auto-formation web : prise en main d'outils en local\\
-difficultés liées à la compréhension des enjeux/priorités, liées au fait que l'asso est encore assez jeune et le cadre est encore en construction à tous les niveaux : priorisation de la mutualisation ou travailler en solo ? // comment gérer les bureaux de change ?
-Le projet dans lequel je m'inscris à la base est plein de questions, ce qui différencie grandement ce stage des projets ensimag bien cadrés.
-\textbf{Difficultés à venir}  \\
-gestion des bénévoles/ éventuelle répartition de tâches / conservation d'une dynamique de groupe : outils de suivi (mattermost / github) + quelques réunions physiques \\
-mise en place pas mal de bonnes pratiques que ce soit au niveau technologies, tests, infra ou encore méthodes agiles \\
-gestion du temps
+\textbf{Budget de la version propriétaire} \\
+\begin{table}[h!] \label{tab:evol}
+\centering
+\caption{Prix de la licence 4 PRO}
+\begin{tabular}{llll}%>{\small}l>{\small}l>{\small}l
+\hline\noalign{\smallskip}
+Offre & Nombre d'utilisateurs & Chiffre d'affaires(\euro) & prix annuel(\euro)\\
+\hline\noalign{\smallskip}
+Libre & 0 - 300 & $\leq$ 100 000 & 0\\
+Licence 1 & 300-2000 & $\leq$ 200 000 & 1000 \\
+Licence 2 & 2000-5000 &  $\leq$ 1 000 000 & 3000 \\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
 
-\textbf{Enseignements tirés à ce stade}
-Gestion de projet : importance de la création d'une dynamique de groupe (réflexion sur l'outil plus que le dév en lui-même pour l'instant) : connaître ses partenaires pour tirer le meilleur de chacun d'eux et de leurs compétences \\
-importance de maîtriser les interfaces entre les différentes parties prenantes du projet : partenariat Trézo'rezo / besoin des partenaires pro / objectif de mutualisation des technos/ possibilités offertes par l'outil choisi / budget accordé au projet / possibilités de financement / cadre juridique de la monnaie + éthique des données (GDPR) + dossier ACPR \\
+Le modèle économique de l'Association prend ainsi en compte le fait que, étant donné le nombre de professionnels actuels du réseau (presque 200), elle pourrait prétendre dans un premier temps à la licence gratuite lors de la mise en production mais devra vite envisager le passage à une licence payante -ce qui est inévitable dans la perspective d'intégration des adhérents particuliers.  \\
+
+Enfin, l'outil Cyclos est utilisé par plusieurs monnaies locales bien établies dans leur région (SoNantes à Nantes, Eusko au Pays-Basque, Bristol Pound à Bristol), indicateur de confiance. La perspective de mutualisation des technologies à l'échelle du mouvement SOL (association coordinatrice de monnaies locales en France) est un argument de plus en faveur de Cyclos.
+
+%\newpage
+\paragraph{Architecture logicielle} ~~ 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{Images/cyclos_system_config.png}
+    \caption{Cette figure montre une version simplifiée de la configuration système de Cyclos}
+%\end{figure}
+
+%\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{Images/cyclos_account_config.png}
+    \caption{Cette figure montre une version simplifiée de la configuration des comptes de Cyclos}
+    \label{fig:cyclos_config}
+\end{figure}
+
+L'architecture logicielle de Cyclos est séparée en deux grandes configurations : système et comptes. \\
+~~ La configuration système concerne l'agencement des utilisateurs de la plateforme. On distingue principalement trois natures d'utilisateurs :
+\begin{itemize}
+\item les administrateurs globaux : ils peuvent créer, accéder, interdire différents réseaux et modifier la configuration de l'ensemble du système -types d'authentification et leurs paramètres, types d'accès, ...-
+\item les administrateurs réseaux : un réseau est un environnement indépendant dans le système. Il est composé de membres qui vont s'échanger des unités de compte. Ainsi, le rôle des administrateurs réseaux est de gérer les utilisateurs et leurs droits, ainsi que la gestion de la configuration de comptes - les devises et les types de comptes. \\
+Un administrateur global est un administrateur réseau, pour tous les réseaux.
+\item les membres : c'est la nature d'utilisateurs avec le moins de droits dans le système. Ils ne peuvent administrer que leur propre espace membre.
+\end{itemize}
+La nature de chaque utilisateur est donc définie par le type de groupe auquel il appartient.  \\
+
+~~ La configuration des comptes concerne l'activité d'échanges inter-comptes. Les \textit{devises} sont les différentes unités de compte transférables entre les comptes des membres. Les \textit{types de comptes} sont les éléments centraux de la configuration, chacun étant associé à une devise. De même que pour les groupes,  il existe des \textit{types de comptes} de natures système et membre :
+\begin{itemize}
+\item les types de comptes "membre" : même si, dans la configuration, on définit un unique type de compte, chaque membre en aura une instance propre s'il possède un \textit{Produit} le permettant.
+\item les types comptes de nature système : contrairement aux types de comptes "membre", il n'y en a qu'une instance de chaque dans le système, accessible par les administrateurs réseaux. Il s'agit en fait des comptes de l'organisation. Tous ont logiquement accès au même compte.   
+\end{itemize}
+Chaque type de compte peut contenir des frais de compte et des \textit{types de transferts} décrivant les flux d'unités de compte sortant. \\
+Exemple : le réseau contient deux types de comptes membre \textit{A} et \textit{B}. Les \textit{types de transferts} de \textit{A} sont l'ensemble des flux de \textit{A} vers un autre type de compte. Ainsi, si le \textit{type de transfert} de \textit{A} vers \textit{B} n'est pas défini, il sera impossible d'effectuer un virement d'une instance de \textit{A} vers une instance de \textit{B}. \\ Il est également important de mentionner que les \textit{types de transfert} contiennent un attribut \textit{direction} qui va définir s'il s'agit d'un échange entre comptes d'un même membre(USER\_TO\_SELF), d'un échange entre deux membres différents(USER\_TO\_USER), d'un échange d'un compte système vers un compte membre ou vice-versa(USER\_TO\_SYSTEM / SYSTEM\_TO\_USER). \\
+
+Enfin, un \textit{type de transfert} peut inclure des instances de \textit{frais de transfert}, dont on peut spécifier qui sera chargé du frais, qui le recevra, et le montant du frais, fixe ou en pourcentage du montant du transfert. \\ 
+
+~~ Le lien entre la configuration système et la configuration de compte est la classe \textit{Produit}, définissant, pour chaque utilisateur ou groupe d'utilisateurs, les permissions et les règles d'accès à la plateforme, à ses utilisateurs et à ses comptes. Cette classe joue donc un rôle central dans le système. Plusieurs instances de la classe \textit{Produit} peuvent être assignées à un même groupe d'utilisateurs dits "membres". Les administrateurs ont leur propre \textit{Produit administrateur} qui définit leurs droits dans le réseau. Ce produit est modifiable par les administrateurs globaux. Ainsi, c'est dans cette classe qu'on spécifie si les administrateurs d'un réseau peuvent accéder au compte de l'organisation, ou si un administrateur global peut effectuer un virement à la place d'un membre de leur réseau, entre autres. \\ 
+
+~~ Enfin, le dernier élément qui semble indispensable à la compréhension de l'architecture logicielle de Cyclos est le système de canaux. Un canal est simplement un  moyen d'accéder à la plateforme Cyclos. \\
+Le moyen le plus simple se nomme \textit{web principal}. Il s'agit d'accéder à l'interface web de Cyclos dans son navigateur, de se connecter et d'accéder directement à son propre espace membre, avec l'interface utilisateur de base. \\
+Il en existe d'autres, comme les \textit{services web}, \textit{application mobile} ou les \textit{opérations par sms}. Pour chacune des instances de \textit{Type de transfert} par exemple, il est possible de définir les canaux autorisés. Ainsi on peut autoriser les paiements d'adhérents vers le compte de l'Organisation via les services web, mais les interdire via une application mobile. Cela est valable pour d'autres classes. Tout est donc question de choix de configuration. \\
+
+Il s'agit dans la Fig. \ref{fig:cyclos_config} et dans la partie ci-dessus de présenter une version simplifiée d'un système bien plus complexe, chaque classe contenant son propre lot d'options et de configuration. On comprend dès lors tout l'intérêt d'une automatisation de la configuration du système. Par exemple, créer un nouveau \textit{type de compte} requiert une trentaine d'étapes impliquant toutes les classes décrites ci-dessus, ce qui est assez lourd comme opération à effectuer à la main. De plus, plus le système se développera, plus il deviendra difficile de penser à mettre à jour toutes les dépendances et les permissions des éléments du réseau.
+
+\paragraph{Les services web}
+~~ Étant donné qu'il est souhaité que l'application fonctionne en mode "boîte noire" et que des fonctionnalités externes à Cyclos doivent être ajoutées, le canal privilégié d'accès à la plateforme est donc les \textit{services web}. \\
+Leur objectif est de permettre à une application de communiquer, d'échanger des données avec des applications tierces via Internet, indépendamment des langages ou des plateformes sur lesquels elles se basent, selon un modèle client-serveur. Ainsi, une meilleure interopérabilité entre les services et les applications clientes est recherchée. Elles utilisent les normes du Web, à savoir le protocole HTTP et des formats de données standardisés( souvent XML, mais aussi JSON).\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{Images/service_web.png}
+    \caption{Cette figure décrit le fonctionnement de notre utilisation actuelle d'un service web Cyclos}
+    \label{fig:service_web}
+\end{figure}
+ Cyclos propose deux interfaces de services web permettant de tirer avantage de leurs fonctionnalités existantes : une API REST et une WEB-RPC. Toutes deux sont basées sur le protocole HTTP, l'échange de données se faisant au format JSON. Pour chacune d'entre elles, une librairie cliente PHP existe. Ce qui différencie ces deux interfaces est, avant tout, une question de philosophie.
+\begin{itemize}
+\item une API REST est plus orientée ressources. On accède à une ressource via une requête HTTP dont la méthode va définir quel type d'opération est demandé. Ainsi, une URL peut donner plusieurs réponses HTTP, selon qu'il s'agisse d'une méthode GET,POST,PUT ou DELETE. \\
+Suivant cette logique, le client PHP fourni contient des classes correspondant à des types d'éléments à manipuler : DTO(Data Transfer Object), VO(Value Object).
+\item WEB-RPC est plus orienté "opérations". La requête va contenir le nom du service en cours, ainsi que l'action demandée, et un identifiant vers la ressource concernée. Chaque URL donnera donc une unique réponse HTTP. La méthode(GET ou POST) va dépendre principalement du fait que l'opération modifie une donnée ou non. \\
+Contrairement à la philosophie REST, le client PHP est un ensemble de services(des classes PHP) : UserService, GroupService, ... Leurs méthodes correspondant à des opérations.
+\end{itemize}
+
+Le tableau ci-dessous récapitule la différence d'approche entre les deux interfaces.
+\begin{table}[h!] \label{tab:service_web}
+\centering
+\caption{RPC vs REST}
+\begin{tabular}{lll}%>{\small}l>{\small}l>{\small}l
+\hline\noalign{\smallskip}
+Opération & RPC & REST \\
+\hline\noalign{\smallskip}
+Lire un utilisateur & GET /userservice/getData?id=1234 & GET /users/1234\\
+Supprimer un utilisateur & POST /userservice/remove?id=1234 & DELETE /users/1234\\
+Modifier l'email d'un utilisateur & POST /userservice/save?id=1234 & PUT /users/1234\\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
+Le choix s'est porté sur WEB-RPC pour plusieurs raisons. D'une part, l'application est développée à l'aide d'un framework nommé Symfony dont l'architecture est dite "orientée services"(cf. section \ref{sec:subsec:symfony}). Une interface de services web type WEB-RPC semble donc plus simple à intégrer à la logique de conception. \\
+De plus, les méthodes HTTP, peu nombreuses, peuvent ne pas suffire à représenter la complexité de la solution logicielle et des actions possibles. \textbf{EXEMPLE ASSIGNATION : DELETE OR UPDATE ?}. Pour un développeur pleinement conscient du fonctionnement interne de Cyclos, cela peut être suffisant. Etant donné le contexte associatif, le projet sera maintenu bénévolement par des personnes n'ayant pas le temps de connaître toutes les subtilités du logiciel. Les messages doivent être sans ambiguïté, ce qui sera le cas si le message contient le nom du service et l'opération effectuée. 
+
+\subsection{Plus de fonctionnalités : Symfony, un framework PHP} \label{sec:subsec:symfony}
+\subsubsection{Intérêt d'un framework} \label{sec:subsec:subsubsec:interet}
+~~ Symfony est un framework favorisant le développement d'applications web en langage PHP. Les intérêts de faire appel à un framework sont multiples :
+\begin{itemize}
+\item \textbf{Un code structuré} : de part sa propre architecture de fichiers, il incite à la réalisation d'un code  organisé (modèle Modèle-Vue-Contrôleur, architecture orientée services)
+\item \textbf{Découpe en bundles} : Les applications développées avec Symfony sont découpées en \textit{paquets}(bundles). Ainsi, si quelqu'un a déjà développé un bundle répondant à un certain besoin (par exemple la gestion d'un panier sur un site e-commerce), celui-ci peut être partagé, réutilisé, maintenu par les autres développeurs de la communauté.
+\item \textbf{Une configuration simplifiée} : A l'aide de quelques fichiers de configuration, il est aisé de séparer les différents environnements de travail (développement / test / production) ayant chacun leur propre logique.
+\item \textbf{Un contrôle des librairies} : il est possible d'intégrer un simple fichier au format json permettant la gestion de toutes les bibliothèques dont l'application dépend pour fonctionner grâce à l'outil \textit{Composer}. Il traque les mises à jour de ses bibliothèques, alerte sur les problèmes de compatibilité et permet ainsi la maintenabilité d'un projet.
+\end{itemize} 
+
+L'inconvénient majeur de l'utilisation d'un framework est sa maîtrise, ainsi que la nécessité presque impérieuse d'avoir une bonne maîtrise et une bonne expérience de PHP. Il permet de ne pas "réinventer la roue" pour des tas de fonctionnalités existantes et requises sur la plupart des applications web, mais si la roue n'a jamais été inventée, le développeur a moins conscience des enjeux auxquels le framework s'attaque en boîte noire (sécurité, gestion de données, configuration, ... ). \\
+~ De plus, si une faille de sécurité est détectée sur une application web développée avec Symfony, alors toutes celles développées avec une configuration équivalente y sont exposées. 
+
+\subsubsection{Application au projet} 
+\label{sec:subsec:subsubsec:application}
+\paragraph{Un code structuré}
+Le code de l'application est séparé en deux bundles distincts. L'objectif d'un bundle (cf. \ref{sec:subsubsec:interet}) est d'implémenter une fonctionnalité bien précise. \\
+~~ Le premier bundle se nomme \textit{CyclosBundle} et contient toute la logique liée à la configuration interne de Cyclos(cf. Fig\ref{fig:cyclos_config}). Il s'agit, pour la très grande majorité des actions, de méthodes \textbf{CRUD}(Create, Read, Update, Delete) sur les différentes entités du système(Réseau, Groupe, Utilisateur, Type de compte, Type de transfert, ...). Son objectif principal est l'automatisation de la mise en place de leur configuration, très complexe à mettre en place "à la main" (via le canal \textit{web principal}) et nécessitant donc une bonne maîtrise de l'outil. %Ainsi, n'importe quelle instance administratrice de l'application doit pouvoir créer un nouveau type de compte pour les professionnels en fournissant les informations les plus basiques (nom, crédit limite par défaut). il devrait être en mesure de créer un type de compte avec tous les types de transfert associés vers tous les comptes existants, qu'il s'agisse de transferts entre comptes d'un même membre ou vers un bénéficiaire, les permissions adéquates.\\
+Ce bundle est indépendant de tout bundle externe.\\
+~~ Le second bundle se nomme \textit{UserBundle} et contient toute la logique métier liée à la gestion des utilisateurs de l'application web ainsi que la gestion des échanges (paiements / conversions / reconversions ). Il dépend donc fortement du bundle UserCyclosBundle. \\ \\
+
+Chaque bundle respecte le modèle MVC (Modèle-Vue-Contrôleur) et SOA(Architecture Orientée Services), indispensables à un découplage du code. En effet, certaines fonctions du bundle Cyclos - essentiellement celles qui servent à récupérer des informations de la base de données- sont utiles à l'autre bundle, notamment la récupération d'informations au sujet des comptes des professionnels.  Ainsi, il faut en faire des "services" accessibles partout dans le code.
+
+\paragraph{Le design pattern MVC} ~ \\
+L'idée du design pattern MVC est d'organiser son code source et ses fichiers en trois catégories bien distinctes :
+\begin{itemize}
+\item Les vues : Cette partie se concentre sur l'affichage. Elle contient donc principalement des fichiers en HTML.
+\item Les modèles/entités : Cette partie s'occupe de la gestion des données de l'application. Leur rôle est donc de communiquer avec les bases de données(Symfony / Cyclos). 
+\item Les contrôleurs : ce sont les éléments centraux de la logique de l'application. Ils s'occupent de traiter les données fournies par les modèles et les services, de prendre les décisions qui en découlent et d'afficher en conséquence une certaine vue à l'utilisateur. Ils gèrent également les droits d'accès des utilisateurs (cf. \textbf{METTRE REF SECU AUTORISATIONS})
+\end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{Images/mvc.png}
+    \caption{Cette figure décrit le design pattern Modèle-Vue-Contrôleur}
+    \label{fig:mvc}
+\end{figure}
+
+\subsection{Architecture globale de l'application}
+~~ A partir des sous-sections précédentes(\ref{sec:subsec:cyclos} et \ref{sec:subsec:symfony}), un workflow simplifié du fonctionnement de l'application web peut être présenté comme suit :
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{Images/archi_global.png}
+    \caption{Cette figure décrit de façon simplifiée l'architecture globale de l'application web}
+    \label{fig:archi_global}
+\end{figure}
+
+De cette architecture découle naturellement un ensemble de choix de développement et des conclusions.  
+\paragraph{La connexion réseau}
+Un inconvénient de l'utilisation des services web est que la connexion réseau (cf. Fig \ref{fig:archi_global}) doit se faire à chaque action de contrôleur sous peine de se la voir refuser. Elle ne peut être effectuée une fois pour le temps d'une session utilisateur. \\
+Un choix important a été effectué concernant la connexion à Cyclos via les services web : seul un unique administrateur global se connecte effectivement à la base de données Cyclos. Peu importe quel membre effectue une requête nécessitant la récupération de données ou la modification de la base de données Cyclos, c'est cet administrateur global qui réalise l'action en interne. Cela a un avantage majeur : toute la configuration, les permissions et les accès sont tournés vers un unique groupe d'utilisateurs : les administrateurs globaux. L'automatisation de la configuration est donc simplifiée, bien que toujours complexe. \\
+Ce choix présente cependant des inconvénients. Tout d'abord, on se prive d'une couche de sécurité en plus, étant donné que la connexion réseau se fait par authentification login/mot de passe. De plus, cela rend le filtrage de certaines opérations impossible. En effet, les administrateurs globaux et les administrateurs réseaux ont accès aux mêmes comptes(cf. \textbf{METTRE REF Cyclos archi logicielle}). Ainsi, distinguer quel administrateur a réalisé une certaine opération est impossible, puisque tout est fait en interne par un unique administrateur. 
+
+\paragraph{les bases de données}
+L'application comprend deux bases de données :
+\begin{itemize}
+\item La base de données Cyclos : contient toutes les données liées à la plateforme de paiements
+\item La base de données Symfony : contient toutes les données liées aux fonctionnalités auxquelles Cyclos répond partiellement ou pas du tout.
+\end{itemize}
+
+Il y a donc possibilité de duplication de données entre les deux bases de données, qui doivent à tout instant restées cohérentes entre elles. L'exemple le plus évident d'une ressource doublée est l'utilisateur. En effet, il a besoin d'une instance dans Cyclos pour pouvoir réaliser/recevoir des paiements, mais aussi dans Symfony pour toute la logique métier externe. Ainsi, une éventuelle dissociation entre les deux bases de données doit à tout prix être évitée, et ce pour toute ressource doublée. \\ 
+
+Considérons une ressource doublée \textit{R}, une instance dans la base de données Symfony \textit{R\_symfony} et son équivalent \textit{R\_cyclos}.  \textit{R\_symfony} contient un attribut \textit{cyclosID}, clé primaire faisant référence à \textit{R\_cyclos}, permettant de faire le lien entre les deux. Ainsi, à tout moment dans la vie de l'application, les deux assertions suivantes doivent être vraies :
+\begin{itemize}
+\item si \textit{R\_symfony} existe, alors \textit{R\_cyclos} existe et son identifiant vaut \textit{cyclosID}
+\item si \textit{R\_cyclos} existe, alors son identifiant correspond à un \textbf{unique} \textit{R\_symfony}.
+\end{itemize}
+
+\begin{figure}[h!]
+   \begin{minipage}[c]{.46\linewidth}
+      \includegraphics[scale=0.5]{Images/sans_service.png} 
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \includegraphics[scale=0.5]{Images/avec_service.png} 
+   \end{minipage}
+\caption{Cette figure oppose la récupération d'une ressource doublée avec et sans service}
+\label{fig:pattern_association_bdd}
+\end{figure}
+
+Ce motif est valable pour tout service, leur objectif étant d'être accessible partout dans le code. Mais la figure \ref{fig:pattern_association_bdd} illustre bien ce qui peut se produire si on ne passe pas par un service : un oubli de vérification dans une ou plusieurs actions de contrôleur. \\
+Cela n'a pas été mis en place. Il s'agit donc d'une proposition d'amélioration à apporter à l'application pour une cohérence renforcée. \\ 
+
+Pour accentuer la sécurité de l'application, il serait préférable d'avoir les bases de données sur deux serveurs différents. Ainsi, si un intrus accède à l'une des bases de données, l'autre est toujours protégée. Cela implique la prise d'un deuxième abonnement pour un hébergement, ce qui ne fait pas partie du modèle économique actuel de l'Association. Dans un premier temps, elles resteront donc accessibles sur le même serveur. 
+
+\paragraph{le fichier de correspondances}
+Ce fichier est en quelque sorte le point d'entrée de l'application. Il contient l'ensemble des routes valides de l'application. Si la requête de l'utilisateur correspond à une route valide, le contrôleur attitré prendra le relais. Le cas échéant, c'est une erreur code 404 qui est retournée. Le fichier de correspondances peut être réutilisé pour d'autres objectifs à long terme de l'Association : une application mobile. Une architecture bien définie permet d'envisager immédiatement les enjeux liés à chacun de ses composants.
+
+\section{La sécurité de l'application} \label{sec:securite}
+~~ Afin d'avoir un espace membre fonctionnel et la confiance de ses utilisateurs, il est nécessaire d'accorder une importance toute particulière à la sécurité de l'application. Il s'agit d'un aspect majeur étant donné son impact potentiel sur le reste de l'Association. Tout d'abord, elle engage l'image et la réputation de l'Association comme étant une institution sérieuse, rigoureuse et de confiance. Ensuite, une application non sécurisée ne sera pas validée auprès des institutions telles que l'ACPR(Autorité de contrôle prudentiel et de résolution) ou encore la CNIL(Commission nationale de l'informatique et des libertés) : enjeu judiciaire et réglementaire. Enfin, la sécurité est un enjeu organisationnel, car elle est directement affectée par les différentes parties prenantes ainsi que leurs actions : les utilisateurs, les administrateurs, les services techniques. Elle nécessite donc la mise en place d'un protocole d'utilisation et une sensibilisation sur les bonnes pratiques de sécurité. \\
+Elle est décrite dans cette section suivant trois aspects que sont l'identification, la gestion des autorisations et les différentes failles de sécurité à anticiper. 
+\subsection{L'authentification}
+L'identification est le processus de reconnaissance de l'utilisateur accédant à l'application. Basiquement, il s'agit d'un membre du site ou d'une personne anonyme. L'authentification à l'application, mais aussi à Cyclos via les services web, se fait à l'aide d'un pseudonyme et d'un mot de passe.
+\paragraph{Authentification à l'application}
+Avec le framework Symfony, la sécurité dispose de son propre fichier de configuration. On peut y définir une entité \textit{pare-feu(firewall)} définissant la méthode d'encodage des mots de passe, la méthode d'identification, le fournisseur d'utilisateurs (là où Symfony ira vérifier que les identifiants fournis correspondent à un membre valide) et un masque d'URL afin de spécifier les URLs protégées par ce pare-feu. Dans notre cas, il s'agit du site tout entier. Ainsi, un visiteur anonyme est redirigé automatiquement vers le formulaire de connexion. Une nouvelle fois, l'intérêt de faire appel à un framework est illustré. L'identification est une fonctionnalité de base de la plupart des applications web, faite et refaite par de nombreux développeurs. Ce fichier permet donc, en quelques lignes une fois maîtrisé, de configurer notre authentification. 
+\paragraph{Gestion des mots de passe}
+Les mots de passe sont encodés en base de données selon l'algorithme SHA-512, après avoir été rembourrés grâce à une clé unique créée par Symfony lors de l'inscription : \textit{le salt}(cf \textbf{METTRE REF UML}). Ainsi, même si un intrus accède à la base de données, l'utilisation d'un \textit{salt} complexe -avec des caractères spéciaux- rend presque impossible les \textit{attaques dictionnaires}, car la probabilité que quelqu'un ait une table de correspondances avec une telle chaîne de caractères (mot de passe + salt) est infinitésimale. \\
+Il faut malgré tout être conscient que de telles pratiques augmentent les temps de chiffrement et l'espace en base de données des mots de passe encodés. \\ \\
+
+Le logiciel Cyclos possède et propose un algorithme de validation de mot de passe, interdisant les "mots de passe évidents". Cependant on retrouve ici le problème d'une solution propriétaire : comment savoir sur quoi se base cet algorithme mentionné nulle part dans la documentation. A part des tests à la main, rien ne permet de garantir de la validité de celui-ci. Il n'est donc pas utilisé pour l'instant.\\
+Les critères de validation de mot de passe sont les suivants :
+\begin{itemize}
+\item entre 8 et 25 caractères
+\item mot de passe ne doit pas inclure le login
+\item au moins un caractère spécial
+\end{itemize}
+Loin d'inclure toutes les possibilités de mots de passe "évidents", ces critères doivent être améliorés mais éliminent déjà un grand nombre de cas trop simples.
+
+\paragraph{Authentification à Cyclos}
+Pour rappel, l'application accède au logiciel Cyclos par le biais des services web (cf. Fig\ref{fig:archi_global}). Pour ce faire, une méthode d'authentification est également requise lors de l'étape de "connexion réseau". Il en existe deux modes  dits \textit{sans état} : login/password et accès client.
+\begin{itemize}
+\item  L'inconvénient du premier est qu'il est envoyé lors de chaque requête, donc doit être crypté en production(protocole HTTPS et non HTTP). Ce n'est pas nécessaire dans l'architecture actuelle  car les deux bases de données sont accessibles sur le même serveur et fonctionnent donc \textit{en local}. Pour pouvoir écouter la requête, il faut donc avoir accès au serveur, ce qui est déjà un problème bien plus grave. \\
+En revanche, comme mentionné précédemment, dans la perspective d'avoir les deux bases de données sur deux serveurs différents pour plus de sécurité, le chiffrement des données d'identification deviendra une condition sine qua none.
+De plus, si un utilisateur change de mot de passe dans l'application, il faut également le modifier dans la base de donnée Cyclos.
+
+\item un token "accès client". Il s'agit d'un mode qui va générer une clé unique pour un utilisateur donné à chaque connexion aux services web, ce qui a l'avantage de découpler totalement l'utilisateur du mode d'authentification, mais permet également le découplage des applications tierces : si un utilisateur possède deux mots de passe différents sur deux applications accédant à la même base de données, avec lequel des deux doit-il être identifié ? Ainsi, à terme, ce mode semble le plus adapté aux objectifs. 
+\end{itemize}
+ 
+Cependant, le second demande bien plus de travail au niveau de la configuration et de la compréhension des services web. Pour cette raison, le premier est pour l'instant suffisant et donc privilégié.
+\subsubsection{la carte de sécurité Cairn}
+~~ Il a été décidé de rajouter une fonctionnalité permettant d'identifier les membres de l'application. L'authentification classique (login, mot de passe) peut toujours, dans l'hypothèse, être connue d'une personne tierce. Il suffit que le membre utilise le même mot de passe sur plusieurs sites différents, et que l'un deux soit sujet à une faille pour que potentiellement cette tierce personne puisse usurper l'identité du membre. \\
+L'idée est donc de s'assurer de l'identification d'un membre de la plateforme grâce à autre chose que son mot de passe, et ce pour des opérations considérées comme "sensibles". Il existe plusieurs alternatives, parmi elles la biométrie, la vérification par code SMS, les "one time password" ou encore les questions personnalisées. Le choix s'est porté sur les matrices papier. Ainsi, à chaque membre est attribué une carte de sécurité générable une seule et unique fois : une matrice de nombres à 4 chiffres générée aléatoirement avant d'être encodée en base de données. L'encodage est réalisé à partir du salt (cf \textbf{METTRE REF UML}), créé à l'inscription et utilisé pour encoder le mot de passe.  Ainsi, si un intrus accède à la base de données, il ne pourra exploiter ni les mots de passe ni les cartes de sécurité. 
+
+\paragraph{Les opérations sensibles} ~ \\
+L'intérêt de cette carte est donc, pour un ensemble d'URLs correspondant à des opérations sensibles, de les précéder d'une étape de saisie d'une clé de la carte, clé dont la position est aléatoire.
+Les opérations sensibles sont toutes les opérations qui touchent directement aux données personnelles de l'utilisateur ou qui requièrent une interaction avec un nouveau membre : ajout d'un nouveau bénéficiaire, paiement vers un bénéficiaire non enregistré, modification des données du profil, ... \\
+Une classe nommée \textit{SecurityEvents} répertorie l'ensemble de ces opérations à l'aide de deux attributs :
+\begin{itemize}
+\item \verb!SENSIBLE_ROUTES! ensemble de routes(définies dans le fichier de correspondances(cf. Fig\ref{fig:archi_global}) dont le caractère sensible est indépendant de leurs paramètres de requête. 
+\item \verb!SENSIBLE_URLS! routes dont le caractère sensible dépend de la valeur de certains paramètres de requête. 
+\end{itemize}
+
+\paragraph{Le problème à résoudre}
+Il est impensable d'imaginer l'ajout d'un formulaire pour chaque action de contrôleur correspondant à une opération sensible. Pour répondre à ce problème, le \textbf{design pattern Observer} est respecté : 
+\begin{itemize}
+\item un objet observé(Observer) : l'objet \textit{kernel.request} (objet Symfony) qui contient la requête(et donc l'URL) en cours.
+\item des objets observant(Listener) :  une seule classe créée nommée \textit{SecurityListener}, qui va récupérer l'attribut "route" ainsi que les paramètres de requête "query" et les comparer aux opérations sensibles répertoriées(voir ci-dessus).
+\item des services de traitement : si la requête est analysée par le \textit{listener} comme une opération sensible, le visiteur est redirigé vers le formulaire de saisie, en sauvegardant la requête initiale(le nom de la route \textbf{et} les paramètres)
+\end{itemize}
+
+Cela permet un découplage du code. Pour ajouter une action à la liste, il suffit de rajouter la route correspondante à la classe les répertoriant. Avec le design pattern \textit{Observer}, la définition de l'action sensible doit être complètement indépendante de l'implémentation de l'action de contrôleur associée. \\
+La position de la clé demandée est aléatoire et change donc à chaque requête, rendant ainsi quasi-nulle la probabilité d'obtention de la bonne clé. De plus, on empêche la multiplication des tentatives en bloquant l'accès à l'espace membre au bout de 3 essais infructueux. \\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{Images/pattern_carte.png}
+    \caption{Cette figure décrit le fonctionnement du pattern Observer appliqué à la carte de sécurité}
+    \label{fig:pattern_carte}
+\end{figure}
+\paragraph{Contrainte majeure}
+
+Le fait que l'étape d'identification par carte(requête C) puisse venir s'intercaler entre une requête A et une requête B (opération sensible) entraîne une difficulté : il faut enregistrer le contenu de tous les paramètres de la requête B pour pouvoir rediriger le visiteur vers la bonne page après la saisie. Hors, il est commun de passer un paramètre de requête directement dans la route -un identifiant notamment, car l'exploitation qui s'en suit avec Symfony est alors simplifiée- et non dans le tableau de paramètres "query". \\
+Voici ci-dessous un exemple :
+\begin{itemize}
+\item cas 1 : \verb!http://www.monsite.com/example/17546?nom=cairn!
+\item cas 2 : \verb!http://www.monsite.com/example/?id=17546&nom=cairn!
+\end{itemize}  
+ Dans le cas 1, l'id \textit{17546} est dans le chemin de la route, contrairement au cas 2. Dans l'état actuel, ce paramètre serait perdu lors de l'étape "Ecran Carte de sécurité". Cela impose donc que, pour toutes les actions de contrôleur sensibles, il n'y ait qu'une et une seule façon de passer les paramètres : aucun paramètre dans la route. Cette contrainte de développement est majeure étant donné que le listener est censé fonctionner en "boîte noire" mais que, dans l'état actuel des choses, le développeur doit être pleinement conscient de son fonctionnement. \\
+Il s'agit d'une limite qui doit être corrigée. 
+
+\subsection{L'autorisation}
+L'autorisation est le processus qui permet de vérifier que le visiteur a les droits d'accès à la page demandée. Cette étape intervient donc après celle d'authentification.
+\subsubsection{L'application}
+De même que pour l'identification, Symfony aide à la gestion des droits d'accès aux ressources protégées grâce à un système de rôles. Chaque membre, selon sa contribution au fonctionnement de la plateforme, se voit assigner un ou plusieurs rôles qui vont définir les ressources auxquelles il a accès. Les rôles suivants ont donc été définis: ROLE\_SUPER\_ADMIN pour les administrateurs, ROLE\_GROUPE\_LOCAL pour les groupes locaux et enfin ROLE\_PRO pour les professionnels. Ces rôles sont hiérarchisés, c'est-à-dire qu'une page nécessitant d'avoir ROLE\_PRO sera accessible par un membre ROLE\_GROUPE\_LOCAL et ainsi de suite. Cela simplifie la discrimination des membres et leurs accès. \\
+
+Selon le rôle assigné à un membre, son équivalent Cyclos est placé dans un type de groupe différent(cf. Fig \ref{fig:cyclos_config}) :
+\begin{itemize}
+\item ROLE\_SUPER\_ADMIN $\leftrightarrow$ Groupe administrateurs globaux
+\item ROLE\_GROUPE\_LOCAL $\leftrightarrow$ Groupe administrateurs réseau
+\item ROLE\_PRO $\leftrightarrow$ Groupe membres
+\end{itemize}
+Dans Cyclos, les administrateurs ont accès aux mêmes comptes -les comptes  \textbf{SYSTEM}- c'est-à-dire le compte de débit et le compte de l'organisation, ce qui justifie ce choix d'agencement des utilisateurs. De plus, cela leur donne des statuts bien distincts au sein du logiciel, facilitant les opérations de recherche ou de filtrage. \\
+
+Il y a trois couches de vérification des droits qui permettent un contrôle assez fin des autorisations.
+\textbf{Le contrôleur d'accès}
+Accessible dans le fichier de sécurité, il permet de contrôler les URL. On associe un motif d'URLs à un rôle.  \\
+ \verb!{path: ^/config, roles: ROLE_SUPER_ADMIN}!. \\
+En une ligne, tout le panel d'URLs correspondant au \textit{path} requiert le rôle d'administrateur. 
+\textbf{Les annotations}
+Elles permettent de sécuriser une action de contrôleur. Comme leur nom l'indique, il s'agit d'une note qu'on renseigne juste avant la méthode. De la même manière, en une ligne de code, la méthode est sécurisée. \\
+\textbf{Dans les vues}
+Un moyen évident de protéger son application est d'empêcher un membre de voir une option de navigation à laquelle il n'a pas accès. L'objectif est donc de sécuriser l'affichage.
+Ainsi, dans les vues (qui vont être transformées en code HTML), on peut vérifier les rôles de l'utilisateur courant, permettant d'afficher ou non un lien, une image ... \\
+\paragraph{Respect du fonctionnement associatif}
+Comme précisé lors de la description du fonctionnement associatif (\ref{sec:subsec:contexte}), les instances décisionnelles sont plurielles. Ainsi, le fonctionnement de l'administration de l'application doit retranscrire cela. Chaque groupe local est chargé de la décision finale concernant l'intégration d'un professionnel de sa zone au réseau du Cairn. De la même manière, chaque groupe local doit pouvoir administrer les professionnels de sa zone pour tout ce qui concerne la vie de la monnaie : conversions/reconversions/débits/crédits, l'autorisation à accéder à la plateforme, la gestion des cartes de sécurité. En revanche, il paraît alors insensé qu'un groupe local A puisse autoriser l'accès d'un professionnel appartenant à la zone d'un groupe local B. Dans ce cas, la connaissance du rôle ne suffit pas à autoriser la ressource demandée.  \\
+
+Pour pallier cela, un attribut \textit{referents} a été ajouté à la classe User (cf. \textbf{METTRE REF FIG UML}). La vérification doit être effectuée dans chaque action de contrôleur le nécessitant. Ainsi, les tâches d'administration d'un professionnel pourront être réalisées par un membre référent. Par défaut, à l'inscription d'un nouvel utilisateur, tous les membres dont le rôle est \textit{ROLE\_SUPER\_ADMIN} sont assignés comme référents.    
+
+\subsubsection{Cyclos}
+Comme décrit dans la partie \ref{sec:subsec:cyclos}, les permissions sont  mises en place dans des entités \textit{Produit} que l'on peut assigner à un groupe d'utilisateurs(cf. Fig \ref{fig:cyclos_config}). Hors, Cyclos est accessible depuis l'application via le canal \textit{services web}, de sorte que les bases de données Symfony et Cyclos soient, à tout instant, toujours cohérentes entre elles. Ainsi, tout membre de l'application dont l'équivalent Cyclos ne fait pas partie de l'administration globale ne doit pas pouvoir accéder à Cyclos par le canal \textit{web principal}. Cela reviendrait à "court-circuiter" la logique de l'application.\\
+Exemple : un professionnel souhaite supprimer son espace membre. S'il accède à Cyclos directement via le canal \textit{web principal} et supprime son compte, son espace membre Symfony lui, existera toujours, provoquant une dissociation entre les deux bases de données. \\ \\
+Un administrateur global doit pouvoir accéder à Cyclos pour gérer son paramétrage ainsi que ses devises. Ces choix sont la conséquence directe de l'architecture de l'application.
+	
+\subsection{Les failles de sécurité}
+L'application ne doit à aucun moment retourner une erreur au visiteur, révélateur d'un cas non géré lors du développement et donc d'une potentielle faille exploitable. Cette sous-section a donc pour but de passer en revue les failles de sécurité et la façon dont elles sont bloquées. 
+
+\paragraph{Les actifs primordiaux}
+Il s'agit de l'ensemble des processus métiers de l'application et ses informations. \\
+\textbf{les routes} Point d'entrée de l'application, le fichier de correspondances répertorie l'ensemble des routes valides. Ces routes peuvent contenir des paramètres dynamiques - token, identifiant, mot, ...- dont les valeurs sont spécifiées par le visiteur. Une règle d'or lors du développement est \textbf{Never trust user input}. Ainsi, il est nécessaire de s'assurer que les valeurs indiquées correspondent bien au type attendu.\\
+Exemple : \verb!http://www.monsite.com/example/?id=17546&nom=cairn! \\
+On attend du paramètre \textit{id} un entier, mais l'utilisateur pourrait très bien rentrer n'importe quoi d'autre. \\
+Ainsi, pour chaque route, on spécifie des exigences sur les paramètres. Cela peut-être un ensemble de valeurs fixes, ou alors une expression régulière. \\
+
+\textbf{les failles XSS}(Cross-site scripting) : Il s'agit d'injecter du code HTML contenant du JavaScript dans les pages pour le faire exécuter aux visiteurs. Pour "injecter" du code, il faut donc que le serveur récupère une donnée fournie par le visiteur malveillant. Cela se fait lors de deux opérations : lors d'une requête HTTP GET(une URL) ou lors d'une requête HTTP POST(formulaire). Le premier cas est décrit ci-dessus. La soumission de formulaires étant gérée par Symfony, le  cas des failles XSS a été traité. \\
+\textbf{les injections SQL} De même, en utilisant les outils fournis par Symfony pour effectuer des requêtes en base de données, le cas des injections SQL est géré. \\ \\
+Encore une fois, les injections sont des cas classiques auxquels de nombreux développeurs se sont déjà attaqués. La solution est connue : il faut échapper les caractères des champs de formulaire avant de les traiter. Seulement, il suffirait d'un oubli sur l'un des nombreux champs de formulaire de l'application pour avoir une faille. C'est pourquoi l'automatisation de l'échappement par le framework permet de se concentrer sur la logique métier. \\
+Cependant, il faut tout de même être pleinement conscient de l'existence de ces failles.
+
+\paragraph{Protéger les actifs supports}
+Les actifs supports sont les processus qui permettent à l'application de fonctionner, incluant les personnes, le matériel, les logiciels, le réseau ... \\
+\textbf{Le logiciel Cyclos}\\
+Comme mentionné lors de la partie sur l'architecture logicielle de Cyclos(\ref{sec:subsec:cyclos}), les interactions avec le logiciel se font via un système de \textit{channels}: web principal / services web ..
+Il faut donc s'assurer de la sécurité de ces accès. On rappellera donc que l'accès aux \textit{services web} se fait par login/mot de passe administrateur, étant donné qu'il n'y a qu'un seul et unique administrateur qui se connecte à Cyclos et effectue toutes les opérations. Protéger l'accès aux services web revient donc à protéger l'accès aux mots de passe de l'application.(\textbf{METTRE REF GESTION MDP}). De plus, on rappellera également que la base de données de l'application tierce et la base de données Cyclos sont placées sur le même serveur. Les services web s'effectuent donc \textit{en local}. Cela signifie qu'accéder aux données envoyées par une requête d'un service web revient à avoir accès au serveur, et donc directement aux bases de données.
+
+\textbf{Les personnes et leur matériel}
+L'application est amenée à être utilisée par des professionnels du réseau(de tous milieux) et par des bénévoles de tous types pouvant évoluer avec le temps. Il est peu probable que tous ces acteurs soient pleinement  conscients des impacts de leurs actions passées et futures sur la sécurité de leur matériel. Il est donc nécessaire de mettre en place un protocole d'emploi afin de limiter les actions néfastes. De plus, les vues contiennent des messages destinés à alerter l'utilisateur. \\
+\textbf{Cas concret} : seul un référent d'un professionnel peut générer une carte de sécurité pour ce professionnel. Le groupe local de Grenoble est référent de \textit{entreprise A}. Alice est membre du groupe local de Grenoble et possède les accès à l'espace membre. Elle se connecte, active sa propre carte de sécurité, puis génère la carte de \textit{entreprise A} avant de l'imprimer puis l'envoyer par lettre à l'adresse de \textit{entreprise A} mentionnée dans son profil. Seulement elle ne supprime par le fichier téléchargé (contenant les clés de la carte en clair) de son ordinateur personnel. Toute personne tierce ayant accès à l'ordinateur d'Alice peut obtenir le contenu non encodé de la carte de sécurité de \textit{entreprise A}, qu'il s'agisse d'une personne de confiance ou d'un pirate. \\ 
+\textbf{Sensibilisation au phishing}
+Il est absolument impossible de garantir la sécurité de l'ensemble du matériel de toutes les personnes en interaction avec l'application. En revanche, il est possible de les inciter à limiter au maximum les informations accessibles. 
+\paragraph{attaque CSRF}
+La faille CSRF(Cross Site Request Forgeries) consiste à forcer un utilisateur authentifié à exécuter une requête à son insu. Plus cet utilisateur à de droits, plus les dommages peuvent être importants. Elle fait donc appel à la naïveté de la victime, mais aussi à celle de l'application.
+
+Une première couche de sécurité, insuffisante si seule, consiste à mettre toutes les actions hors lectures, c-a-d qui interagissent avec les bases de données, en méthode POST. Cela signifie qu'elles doivent nécessiter une autorisation explicite de l'utilisateur, via un formulaire que l'on doit juste valider ou alors saisir un mot de passe. Cette deuxième option rend l'expérience utilisateur bien moins agréable. \\
+Symfony, pour tous les formulaires, protège contre les CSRF en ajoutant automatiquement un champ caché \_token, dont la bonne valeur est enregistrée dans la session utilisateur au moment de l'affichage du formulaire. Ainsi, celui qui soumet le formulaire doit obligatoirement être celui qui l'a rempli. \\
+En utilisant Symfony, donc, mettre toutes les actions destinées à modifier les bases de données en POST permet de protéger contre les CSRF. \\
+
+\paragraph{Vol de session}
+Lorsqu'un membre se connecte à l'application, un token de session -chaîne de 32 caractères alphanumériques- est enregistré lors de la création de ladite session. Ce token servira, jusqu'à déconnexion, à identifier l'utilisateur courant car transitant entre le client et le serveur lors de chaque requête. Pour qu'une personne tierce puisse connaître la valeur de ce token, il faut écouter une requête client-->serveur et que le token soit en clair. Pour empêcher cela, il faut configurer l'application de sorte à interdire le passage du token en paramètre de l'URL, via GET. De plus, il faut crypter la requête en forçant l'utilisation du protocole HTTPS(système de cryptage SSL). \\
+La dernière option du pirate est de deviner le token de 32 caractères. En mettant des temps de session très courts(2-3 minutes), la probabilité d'obtenir le bon token est infinitésimale. De plus, cela évite le vol de session le plus évident : un oubli de déconnexion sur son PC personnel.\\
+
+
+Toutes les failles présentées ci-dessus et la partie sur la gestion des mots de passe n'ont pas été complètement traitées, mais sont mentionnées car faisant partie des objectifs à remplir (voir \textbf{METTRE REF GANTT} pour plus de détails) pour une meilleure sécurité de l'application. Elles font partie d'une liste non exhaustive de problèmes de sécurité, parmi lesquelles les attaques DoS(Denial of Service attack) et DDoS(Distributed Denial of Service attack) doivent également être mentionnées mais n'ont été ni traitées ni étudiées. Les bloquer ne garantit pas une application parée à toute éventualité, mais une analyse profonde de la question est un travail à part entière qui sort du cadre du stage. 
+%\section{Les tests}
+%\paragraph{PHPUnit : outil de test symfony}
+%
+%\paragraph{Difficulté d'automatisation des tests}
+%
+%\paragraph{Intégration : Travis CL}
+%
+%
+%\paragraph{La blockchain}
+%Cette technologie, base de données distribuée à travers l'ensemble des noeuds( unités de calcul) d'un réseau, permet notamment de se passer d'un tiers de confiance. Elle assure la sécurité de la base de données par système cryptographique. Cette question de confiance fut récurrente au sein du groupe, même si Cyclos accompagne les monnaies locales depuis longtemps et se montre donc comme un partenaire de confiance. La monnaie de Genève (le Léman) est basée sur la blockchain d'Ethereum, et sur la base des smart-contracts. Plusieurs prestateurs externes souhaitant faire des monnaies locales leurs clients sont basés sur cette technologie. \\
+%
+%Cependant, aucun membre du groupe de travail n'a de réelle expertise sur le sujet. L'objectif étant un déploiement rapide de la solution pour les raisons évoquées \ref{sec:coeur}, la formation autour de cet outil dissuade le groupe d'en faire une priorité. \\
+%Enfin, la propriété énergivore de la blockchain utilisée par la crypto-monnaie la plus connue, à savoir le bitcoin, fait souffrir cette technologie d'une image mitigée. Comment trouver le bon compromis entre nombre de mineurs du réseau afin d'assurer la sécurité et une consommation énergétique raisonnable ? \\
+%Si elle doit être mise en place, la migration se fera ultérieurement, et seulement si les valeurs de l'Association sont respectées.
+%
+%
+%\subsection{Protocole d'évaluation de la solution}
+%Afin d'évaluer la solution, un plan de tests de charge de l'outil de monnaie électronique est en cours de rédaction : valider les performances, l'endurance et la robustesse de l'outil web.
+%Dans ce but, l'identification des différents scénarios possibles, qu'il s'agisse de conditions standards ou extrêmes, est primordiale.
+%L'approche mise en place se déroule en deux étapes :
+%\begin{itemize}
+%\item Récupération d'un ensemble de données d'une autre MLC utiles à l'automatisation des tests :
+%	\begin{itemize}
+%	\item nombre de professionnels actuels
+%	\item nombre de conversions en bureaux de change/dématérialisés
+%	\item masse monétaire en circulation
+%	\item fréquence globale de transactions
+%	\end{itemize}
+%
+%\item définition des scénarios majeurs d'utilisation
+%	\begin{itemize}
+%	\item consultation du compte
+%	\item réalisation d'une transaction
+%	\item conversion 
+%	\item ...
+%	\end{itemize}
+%\end{itemize}
+%
+%Une fois le cadre bien délimité, deux types de tests sont envisagés :
+%\begin{itemize}
+%\item tests standards : assurer le bon fonctionnement de l'application en utilisation réelle et obtenir un aperçu des temps de réponse
+%\item tests de montée en charge : observer les limites supportables par l'application
+%\end{itemize}
+%
+%Finalement, des métriques d'évaluation des tests définis ci-dessus sont réparties en trois catégories.
+%\begin{itemize}
+%\item critères utilisateurs : expérience utilisateur et design du site (grille d'évaluation)
+%\item critères de disponibilité : nombre d'acteurs simultanés permettant une utilisation acceptable pour chaque utilisateur
+%\item critères sytèmes : occupation mémoire
+%\end{itemize}
+%
+%\subsection{Etat d'avancement}
+%\includegraphics[scale=0.6]{../planning/prerapport.png} 
+
+%~~ D'un point de vue global, 
+%
+%Le projet de monnaie numérique, dans lequel je m'inscris à la base, est plein de questions, du fait de l'évolution constante de ce projet encore jeune. De nouvelles informations viennent régulièrement questionner la réflexion précédemment effectuée. \\ \\
+%
+%
+%
+%Ces premières semaines de stage m'ont permis de réaliser à quel point la qualité de la gestion de projet dépendait de la maîtrise des interfaces entre les différentes parties prenantes, dont voici une liste non exhaustive: création/maintien d'une dynamique de groupe, connaissance de ses partenaires de travail, besoins des partenaires professionnels, objectif de mutualisation des technologies des différentes monnaies locales au niveau national, possibilités offertes par les outils identifiés, budget accordé au projet, le cadre juridique de la monnaie électronique(dossier agréé par l'Autorité de Contrôle Prudentiel et de Résolution) et l'éthique de la gestion des données. 
+
+
 \newpage
-\section{Les impacts du projet} \label{sec:impacts}
-\subsection{Impact sociétal} %\label{sec:subsec:sociétal}
-L'impact sociétal du Projet de Fin d'Etudes se situe essentiellement dans le potentiel de développement du réseau et la fluidification de la circulation et des conversions.  En effet, des professionnels \\
+\section{Conclusion} \label{sec:conclusion}
+\subsection{Les impacts du projet} \label{sec:subsec:impacts}
+\paragraph{Impact sociétal} ~ \\
+L'impact sociétal du Projet de Fin d'Etudes se situe essentiellement dans le potentiel de développement du réseau de professionnels et la fluidification de la circulation et des conversions, avec tout ce que cela rendrait possible par la suite. \\
+En envisageant un processus de suivi des données des professionnels dans une mesure à définir(selon leur souhait et selon le cadre réglementaire), des surplus d'accumulation de cairns dans le réseau pourraient être plus facilement détectés. Des "bouts de chaîne" pourraient être repérés dans le réseau et ainsi éventuellement mettre en relation des partenaires afin de fluidifier la circulation. Des professionnels partageant des valeurs communes et adhérant à ce projet de monnaie locale pourraient travailler ensemble dans un esprit de cohésion encore plus fort de part le symbole qu'une monnaie locale représente. En cela, l'impact sociétal du projet est fort de sens. \\
+De plus, il s'agira d'un argument de poids dans le processus de démarchage des professionnels par le groupe de travail "Réseau des partenaires pros", certains se montrant réticents à l'idée de devoir manipuler des sommes importantes en espèces. \\
+A plus long terme, ce projet, destiné à intégrer les particuliers, permettra la croissance du nombre d'utilisateurs. Par effet de bouche à oreille, de plus en plus de gens entendront parler du concept de monnaie locale et seront amenés à se poser des questions sur les raisons de l'existence de ce genre de projets, ce qui est finalement l'objectif premier : créer un mouvement citoyen et une prise de conscience. 
 
-engager des plus grosses sommes \\ 
-sécurité \\
-En envisageant un processus de suivi des données des utilisateurs dans une mesure à définir, des surplus d'accumulation de cairns dans le réseau pourraient être détectés, de repérer des "bouts de chaîne" dans le réseau et ainsi éventuellement mettre en relation des partenaires du réseau afin de fluidifier la circulation. En cela, l'impact sociétal du projet est fort de sens.
+\paragraph{Impact environnemental} %\label{sec:subsec:environnement}
+La consommation énergétique du projet est, à ce jour, celle de fonctionnement de l'ordinateur personnel et du serveur web hébergé chez PHPNet. Société française proposant des services d'hébergement, elle accentue fortement sa communication sur l'aspect écologique, notamment grâce à son partenariat avec l'option Energie renouvelable de GEG. \\
+Tous les déplacements ont été effectués à vélo.\\
+Ensuite, l'application web interagira avec ses membres par mail. Hors, le poids environnemental du secteur numérique est un problème de plus en plus connu, chaque action-pourtant anodine- étant énergivore bien qu'invisible pour l'immense majorité du grand public. Ainsi, bien que les chiffres varient d'une étude à l'autre, l'envoi d'un mail équivaudrait à laisser une ampoule allumée pendant 24h. Le projet cherche donc à employer les emails avec parcimonie.\\
+Enfin, l'objectif de l'Association Le Cairn étant le développement de l'économie locale et donc des circuits courts, la politique mise en place est, de facto, en faveur du développement durable. En effet, circuits courts impliquent nécessairement la réduction des outils d'acheminement des produits vers les villes, la réduction du nombre d'intermédiaires entre producteurs et consommateurs. De plus, cette thématique est centrale dans la charte de valeurs de l'association, à laquelle doit adhérer tout professionnel s'il veut faire partie du réseau. 
 
-De plus, l'outil de paiement électronique pourrait permettre un meilleur suivi de la masse monétaire en circulation, et ainsi une meilleure régulation en envisageant, par exemple, une augmentation temporaire des taxes à la transaction, des cotisations périodiques des entreprises partenaires..
+\subsection{Les apports du projet}
+\paragraph{Technique}
+La compétence majeure développée durant ce stage est le développement web. Ayant suivi une formation MSIAM, toutes les bases ont été assimilées pendant le stage. Tout d'abord, le langage de programmation PHP, ainsi qu'un framework très répandu dans le monde professionnel : Symfony. \\
+J'ai également pu découvrir des concepts d'architecture de programmation favorisant un code source logique et structuré, à savoir les design patterns comme MVC, Observer, mais aussi Singleton et Dependency Injection(utilisés par Symfony), le concept de l'architecture orientée services ainsi que les services web (REST / RPC). Ce sont des notions communément utilisées aujourd'hui. Elles ont pu être mises à profit pour résoudre des problèmes et serviront également à mieux appréhender des nouveaux projets à l'avenir., car s'étendent à bien d'autres domaines que le développement d'applications web.\\
+Ensuite, j'ai pu assimiler de manière très basique les langages d'intégration web, tels HTML, CSS ou encore Javascript ou jQuery. Cette compétence n'ayant pas été demandée dans le cadre du stage, quelques connaissances ont malgré tout été nécessaires afin de visualiser les différents écrans et les données dont ils allaient avoir besoin. \\
+Je me suis également plongé plus profondément sur les enjeux de sécurité informatique (\textbf{METTRE REF SECTION SECU}). \\
+Enfin, j'ai pu m'approprier, pour la première fois, un outil d'intégration continue : Travis CI.
 
-De plus, il s'agira d'un argument de poids dans le processus de démarchage des professionnels par le groupe de travail "Réseau des partenaires pros".
+\paragraph{Professionnel} ~ \\
+Après avoir effectué mon stage assistant-ingénieur en laboratoire de recherche , un stage en structure associative est une nouvelle expérience enrichissante. Il s'agit d'un projet dans lequel je m'inscris à la base et dont je comprends les enjeux pour l'Association, me donnant un sentiment de responsabilité bien plus important que lors du stage AI où j'avais le sentiment que mon travail ne servirait jamais vraiment. \\
 
-\subsection{Impact environnemental} %\label{sec:subsec:environnement}
-La consommation énergétique à ce jour est celle de fonctionnement de l'ordinateur personnel. Les futurs coûts seront, d'une part, ceux de fonctionnement du serveur web, hébergé chez PHPNet, société française proposant des services d'hébergement,accentuant fortement sa communication sur l'aspect écologique, notamment grâce à son partenariat avec l'option Energie renouvelable de GEG. D'autre part, il est envisagé un déplacement au Pays-Basque afin de rencontrer l'équipe ayant mis en place l'outil de paiement dématérialisé de l'Eusko (MLC de la région), étant donné qu'ils l'ont développé avec l'outil Cyclos. \\ \\
+Le contenu technique du stage est une nouvelle compétence à faire valoir dans le monde professionnel. De plus, l'utilisation de l'application par de nombreux professionnels peut être un moyen de développer un réseau. J'ai déjà eu l'occasion d'en rencontrer quelques-uns. \\
+De plus, le fait de n'avoir eu aucune relation de travail fixe au quotidien m'a permis de réaliser à quel point c était une chose importante pour le bon déroulement d'un projet.  Travailler au sein d'une structure cadrée, avec des rôles fixés et des disponibilités connues à l'avance permet de fluidifier la communication et la prise d'informations. En effet, savoir avec qui et comment communiquer en cas de questionnement, de doutes m'aurait évité des écueils. Cela m'a cependant permis de gagner en autonomie. Cet outil numérique inclut de nombreuses thématiques -techniques, sécuritaires, organisationnelles ou  encore juridiques et réglementaires- nécessitant un certain niveau d'expertise. \\
+Le contexte du cadre de travail était certainement peu classique pour un stage de fin d'études. Personne n'était responsable de surveiller mes horaires de travail, mon assiduité ou même ma présence. J'ai donc travaillé avec la confiance collective et mon sens de l'éthique du travail. \\ 
 
-Enfin, l'objectif du CAIRN étant le développement de l'économie locale et donc des circuits courts, la politique mise en place est, de facto, en faveur du développement durable. En effet, circuits courts impliquent nécessairement la réduction des outils d'acheminement des produits vers les villes, la réduction du nombre d'intermédiaires entre producteurs et consommateurs. De plus, cette thématique est centrale dans la charte de valeurs de l'association, à laquelle doit adhérer tout professionnel s'il veut faire partie du réseau. Via cette sélection, l'utilisation de la monnaie locale filtre notre mode de consommation en le restreignant au réseau.
+La dernière compétence professionnelle du stage était la capacité à développer des compétences de gestion de projet. Elle comprend plusieurs aspects : entretien d'une dynamique de groupe, suivi des livrables et gestion du temps. C'est certainement l'aspect sur lequel le ressenti est le plus mitigé. L'entretien de la dynamique du groupe de travail monnaie numérique a le plus souvent consisté à être disponible quand les bénévoles l'étaient, que ce soit de façon individuelle ou lors de l'animation de quelques réunions de groupe. Ce stage m'a permis d'apprendre que la qualité de la gestion du temps et des livrables dépendait énormément de la maîtrise des interfaces entre les différents composants de l'architecture logicielle (cf. \textbf{METTRE REF Archi globale}).
+
+\paragraph{Personnel}
+~~ L'apport personnel est sans doute l'une des plus grandes satisfactions de ce projet de fin d'études. L'une de mes interrogations, avant ce stage, était de savoir s'il était possible de mettre à contribution des compétences techniques au service de projets s'attaquant aux problèmes de société majeurs : économie, écologie, gouvernance citoyenne entre autres. Le tissu associatif et professionnel que j'ai pu découvrir me permet à présent de répondre que c'est possible, qu'il s'agisse des compétences liées à mon domaine de formation (MSIAM) ou de celles développées lors de ce stage. \\
+Mon lieu de travail étant le local de l'Association situé dans une rue passante fréquentée, j'ai dû faire face à la curiosité des gens - convaincus ou opposés - à propos du projet, développant ainsi ma communication et ma capcité d'argumentation. En effet, il s'agit d'un projet qui ne laisse pas indifférent, car original et traitant d'un sujet qui intéresse tout le monde : l'argent. \\
+Enfin, ce stage a aussi été l'occasion de rencontrer des personnes avec des compétences diverses et variées, des ambitions et des façons de vivre
+différentes. Tout cela m'a permis d'ouvrir mon champ de vision et d'envisager de nouvelles perspectives,  professionnelles ou non, notamment dans le domaine agricole.
+
 \end{document}
 
 

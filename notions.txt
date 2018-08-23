@@ -1,0 +1,128 @@
+notions à caler :
+
+_moteur de templates twig : sécurisation de variables : plus de htmlspecialcharss() htlmentities(), addslashes()
+_utilisation des templates pour envoi d'emails
+_héritage/inclusion de templates; inclusion d'actions de controller
+
+_ORM (pour Object-Relation Mapper, soit en français « lien objet-relation ») 
+    *intérêt : penser son code en objets et non en requêtes SQL
+    *gère la persistance des données en BDD
+    *changement de paradigme : on utilise des objets et on pense POO, et non BDD
+
+_entity manager utilise les transactions :
+    *execute une seule requête pour persister tout en un seul "flush" pour éviter les cassures en BDD : une annonce sans image en cas d echec par exemple
+
+################## Les difficultés techniques rencontrées ########################
+_ Prise en main de l'outil Cyclos pour les besoins de notre application, et cela consistue une difficulté pour l'ensemble des étapes de développement 
+    _un système complexe de par son architecture que sa configuration
+    _architecture : la comprendre déjà dans cyclos même (en utilisation le logiciel en dur) est déjà compliqué, alors pour communiquer avec     elle via une API PHP WEB-RPC..
+
+
+_justification du choix de Cyclos : *expertise interne d'APIs+ avancée technologique commune avec le mouvement SOL (contrairement blockchain)
+                                    *comment réaliser des tests avec une blockchain, étant donné que les transactions sont signées avec des hash
+                                    *possibilité d'avoir plusieurs réseaux, les "network". A l'avenir, on pourrait imaginer que chaque monnaie locale ait son propre réseau sur la plateforme, étant donné que Cyclos permet la communication inter-networks : possibilité de partenariat avec d  
+
+_choix : 
+            
+        *ne pas créer de surcouche Symfony pour les paiements
+            *problème : pour l'intitulé et le motif long. Cyclos ne fournit qu'un attribut "description" et non 2
+            *on pourra contourner comme suit :première ligne : motif court / 2eme ligne et + motif long
+            *autrement il faudra créer une surcouche pour les paiements avec ID du transfer et/ou ID de la transaction + intitulé + motif, ce qui aura le désavantage de recréer beaucoup de travail au niveau de la gestion des paiements : doublon d'entités (cf ci dessus) : non respect d'une spécification
+            
+        *créer une surcouche Symfony pour les rôles et les utilisateurs : FOSUserBundle
+        *gestion des exceptions Cyclos + personnelles : pattern Observer
+
+_les tests:
+    *tests fonctionnels
+    *tests de performance
+    *tests d'intrusion
+    *tests utilisateur (UX)
+
+_les tests d'intégration: PHPUnit
+    Pour écrire des tests efficacement, il faut être en mesure de contrôler le contenu de la base de données en interne initialement et après chaque action réalisée lors d'un test. Comme décrit plus haut, il y a deux bases de données à gérer, et doivent concorder à tout instant. Autant la BDD Doctrine est plutôt aisée à manipuler, autant la BDD Cyclos est très complexe à prendre en main, et nécessite un niveau de compétences en SQL que je n'ai pas.
+    *Processus de mise en place des bases de données pré-tests
+        _réinitialiser la base de données Doctrine, puis insérer l'ensemble des villes et leur code postaux (présents dans un fichier)
+         Etant donné qu'il s'agit ici d'une monnaie locale, les villes présentes correspondent à l'Isère. L'idée étant, dans le futur, de maniupler de façon plus flexible les villes d'où peuvent ressortir les professionnels qui s'inscrivenet. Toutes les villes de l'Isère n'appartiennent pas au SCOT(Schéma de Cohérence Territorial). Celui-ci étant amené à évoluer
+        _réinitialiser la Base de données cyclos. Il est impossible de "restaurer" une base de données Cyclos, c-a-d revenir à un état antérieur de la BDD. Il existe 2 options :
+            *manipuler la BDD en interne pour y parvenir : option exclue 
+            *créer une nouvelle instance de cyclos, la remplir avec des données d'un fichier de backup (fichier qui doit être créé à l'installation une fois la configuration terminée), puis importer des données enregistrées dans des tableurs au format CSV via un script écrit en groovy(~= java) et appeler via les webservices et l'API PHP : option retenue
+            *avantage : il est facile de contrôler les utilisateurs/les paiments présents initialement :  simples tableaux à remplir
+            *inconvénients :
+                            à partir des utilisateurs importés dans Cyclos, il faut créer leur équivalent Doctrine. Cette opération doit être réalisée une fois qu'on est sûr que la BDD Cyclos a été entièrement mise à jour. Cela ne peut se faire qu'en contrôlant le nombre d'utilisateurs présent en BDD(doit correspondre au nombre d'utilisateurs dans le fichier à importer) 
+                            on ne peut ajouter que des utilisateurs ayant un rôle de "membre". Hors, les tests auraient également besoin d'être réalisés avec des utilisateurs de type administrateurs. Tout est donc réalisé avec le super_admin créé au départ   
+                            on ne peut ajouter que des paiements dits "simples", c-a-d pas les paiements automatiques(récurrents)        
+                            
+        _lancer les tests PHPUnit tests fonctionnels
+ 
+    *inconvénient : la mise en place pré-test prend beaucoup de temps, beaucoup trop de temps malgré l'automatisation du script. En effet,          en plus des commandes en elles-mêmes, un enchaînement trop rapide(par exemple tentative d'accès à la BDD Cyclos juste après sa création) peut entraîner une erreur étant donné si la BDD cyclos n'est pas complètement initialisée/editée. Ainsi, il est préférable de mettre un temps d'attente entre certaines commandes (temps qui va très probablement dépendre de la machine utilisatrice ..) ce qui le rend difficile à utiliser. Il faut bien décrire au développeur reprenant le code l'intérêt de ces délais présents dans le script et d'essayer lui-même afin de les adatper. L'utilisation en mode "boîte noire" fiable est donc impossible. 
+    
+_les tests de montée en charge
+    Contrôler le contenu des bases de données avec un client unique est déjà chronophage.  Comment réaliser des tests de montée en charge ?     On peut tester des actions indépendantes de la base de données Cyclos. Comment tester les paiements ? les isncriptions ? ...
+
+_l'intégration continue : Travis CL
+
+
+_fermeture de compte : le compte ne peut plus être supprimé à partir du moment ou la moindre opération a eu lieu. En revanche, on peut dissocier un groupe d'utilisateurs d'un produit, et donc d'un compte, de sorte à le rendre invisible des utilisateurs. 
+
+_difficulté technique rencontrée : connaître sa limite dans le travail de vues sachant qu'on ne me demande pas de le faire mais que j'en ai un minimum besoin
+_difficulté rencontrée : quand on prend des libertés avec le cahier des charges/perimètre fonctionnel, comment et par qui faire valider cette liberté ?
+
+_difficulté technique rencontrée : gestion de la structure transaction / transfert
+    _une transaction est différente d un transfert :
+        *transaction : paiement simple / paiement programmé / paiement récurrent
+        *transfert : réalisation effective d'un échange entre deux comptes
+    _l'attribut qui permet d'identifier uniquement un objet est son id. Pour identifier un transfert, 2 possibilités :
+        *L'ID 
+        *le numéro de transfert
+    _pour identifier une transaction : 2 possibilités :
+        *l'ID
+        *le numéro de transaction
+    Pour un paiement simple, le numéro de transaction et le numéro du transfert associé correspondent. Pour un paiement programmé, 3 options :
+        *le paiement a eu lieu : le transfert(et donc son numéro) existe
+        *le paiement est programmé : le transfert n'existe pas
+        *le paiement a échoué : dans ce cas, le transfert n'existe pas
+        
+    Idem pour un paiement récurrent. Seulement lui possède ce qu'on appelle des "occurrences" qui ont leurs propres attributs
+
+    Bref, dans chacun des cas, la donnée qui identifie le transfert (pour télécharger la notice par exemple) est différente, et existe ou pas selon le statut de la transaction associée. Cela rend difficile l'automatisation de la récupération du transfert. Problème d'interaction avec Cyclos donc.
+
+_difficulté technique rencontrée : automatisation du script de création de config
+_difficulté technique rencontrée : la génération automatique d'un type de compte fonctionnelle etant donné la conifguration
+_difficulté technique rencontrée : imaginer l'intégration du code HelloAsso pour les virements bancaires au code de paiements côté cyclos
+        
+_diffuclté rencontrée : tester le comportement de cyclos dans des cas bien précis pour anticiper les messages d'erreurs potentiels :
+                    _réaction de cyclos si pas les fonds suffisants
+                    _virements récurrents/programmés : le solde était suffisant au moment de la requête, mais ne l'est plus au moment de l'
+                     éxecution
+                    _fermeture de compte alors qu'il y a des paiements en attente 
+
+_les choix : respect de la structure décisionnelle du Cairn vis-à-vis des professionnels
+            _utilisation de 2 comptes systèmes : un compte de débit et un compte de l'Asso
+                *avantage : pas d'anticipation à faire sur les conversions/reconversions des pros
+                *inconvénient : déséquilibre des fonds de garantie Euros-numériques pendant une période donnée / 1-2 semaine selon
+                                la fréquence de rééquilibrage (compensation) choisie
+                
+                Le compte de débit est le miroir du fonds de garantie numérique. (rappel : chaque cairn est gagé par un euro en fonds)
+            _choix : automatiser de la config pour les super admin : CP (création de compte. Autorisation de paiements récurrents / changer les limites, ...). On pourrait tout faire à la main dans cyclos mais risque d'oublis
+
+            _choix : ne pas implémenter les reconversions/conversions récurrentes pour l'instant
+
+_choix : ne pas utiliser certaines fonctionnalités de Cyclos :
+    _tout ce qui concerne les documents téléchargeables : avis d'opération / RIB / Relevé de compte
+
+_mettre des mots-clé : espace membre / compte / type de compte ?
+
+_schemaq : ne pas oubier de légender
+        _Notion de propriétaire et d'inverse : L'entité propriétaire est celle qui contient la référence à l'autre entité
+    _pratique pour la gestion de la BDD : cascade
+    _lazy-loading : l'entité récupérée ne contient pas les attributs "entités" car trop lourd. Il faut soit refaire une requête pour récupérérer un attribut entité, ou mieux : faire un join entre tables lors de la première requête
+    _les relations entre entités
+    *OneToOne
+    *ManyToMany
+    *ManyToOne
+
+_mettre une bibliographie : symfony doc + api / cyclos-reference + cyclos-doc + cyclos-admin / mutualisation des technos / sécurité ? / doc monnaies locales / doc ACPR 
+_prise de recul sur le travail : savoir faire des compromis entre les spécifications et une réalisation "idéale". Discuter pour savoir si ce compromis convient au client dans un premier temps
+
+_definir RPC, REST, HTTP ...
+
