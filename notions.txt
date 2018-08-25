@@ -1,36 +1,10 @@
-notions à caler :
-
-_moteur de templates twig : sécurisation de variables : plus de htmlspecialcharss() htlmentities(), addslashes()
-_utilisation des templates pour envoi d'emails
-_héritage/inclusion de templates; inclusion d'actions de controller
-
-_ORM (pour Object-Relation Mapper, soit en français « lien objet-relation ») 
-    *intérêt : penser son code en objets et non en requêtes SQL
-    *gère la persistance des données en BDD
-    *changement de paradigme : on utilise des objets et on pense POO, et non BDD
-
-_entity manager utilise les transactions :
-    *execute une seule requête pour persister tout en un seul "flush" pour éviter les cassures en BDD : une annonce sans image en cas d echec par exemple
-
 ################## Les difficultés techniques rencontrées ########################
-_ Prise en main de l'outil Cyclos pour les besoins de notre application, et cela consistue une difficulté pour l'ensemble des étapes de développement 
-    _un système complexe de par son architecture que sa configuration
-    _architecture : la comprendre déjà dans cyclos même (en utilisation le logiciel en dur) est déjà compliqué, alors pour communiquer avec     elle via une API PHP WEB-RPC..
 
 
 _justification du choix de Cyclos : *expertise interne d'APIs+ avancée technologique commune avec le mouvement SOL (contrairement blockchain)
                                     *comment réaliser des tests avec une blockchain, étant donné que les transactions sont signées avec des hash
                                     *possibilité d'avoir plusieurs réseaux, les "network". A l'avenir, on pourrait imaginer que chaque monnaie locale ait son propre réseau sur la plateforme, étant donné que Cyclos permet la communication inter-networks : possibilité de partenariat avec d  
 
-_choix : 
-            
-        *ne pas créer de surcouche Symfony pour les paiements
-            *problème : pour l'intitulé et le motif long. Cyclos ne fournit qu'un attribut "description" et non 2
-            *on pourra contourner comme suit :première ligne : motif court / 2eme ligne et + motif long
-            *autrement il faudra créer une surcouche pour les paiements avec ID du transfer et/ou ID de la transaction + intitulé + motif, ce qui aura le désavantage de recréer beaucoup de travail au niveau de la gestion des paiements : doublon d'entités (cf ci dessus) : non respect d'une spécification
-            
-        *créer une surcouche Symfony pour les rôles et les utilisateurs : FOSUserBundle
-        *gestion des exceptions Cyclos + personnelles : pattern Observer
 
 _les tests:
     *tests fonctionnels
@@ -90,31 +64,12 @@ _difficulté technique rencontrée : automatisation du script de création de co
 _difficulté technique rencontrée : la génération automatique d'un type de compte fonctionnelle etant donné la conifguration
 _difficulté technique rencontrée : imaginer l'intégration du code HelloAsso pour les virements bancaires au code de paiements côté cyclos
         
-_diffuclté rencontrée : tester le comportement de cyclos dans des cas bien précis pour anticiper les messages d'erreurs potentiels :
-                    _réaction de cyclos si pas les fonds suffisants
-                    _virements récurrents/programmés : le solde était suffisant au moment de la requête, mais ne l'est plus au moment de l'
-                     éxecution
-                    _fermeture de compte alors qu'il y a des paiements en attente 
-
-_les choix : respect de la structure décisionnelle du Cairn vis-à-vis des professionnels
-            _utilisation de 2 comptes systèmes : un compte de débit et un compte de l'Asso
-                *avantage : pas d'anticipation à faire sur les conversions/reconversions des pros
-                *inconvénient : déséquilibre des fonds de garantie Euros-numériques pendant une période donnée / 1-2 semaine selon
-                                la fréquence de rééquilibrage (compensation) choisie
-                
-                Le compte de débit est le miroir du fonds de garantie numérique. (rappel : chaque cairn est gagé par un euro en fonds)
-            _choix : automatiser de la config pour les super admin : CP (création de compte. Autorisation de paiements récurrents / changer les limites, ...). On pourrait tout faire à la main dans cyclos mais risque d'oublis
-
-            _choix : ne pas implémenter les reconversions/conversions récurrentes pour l'instant
-
-_choix : ne pas utiliser certaines fonctionnalités de Cyclos :
-    _tout ce qui concerne les documents téléchargeables : avis d'opération / RIB / Relevé de compte
 
 _mettre des mots-clé : espace membre / compte / type de compte ?
 
 _schemaq : ne pas oubier de légender
+        _tout mettre en gras
         _Notion de propriétaire et d'inverse : L'entité propriétaire est celle qui contient la référence à l'autre entité
-    _pratique pour la gestion de la BDD : cascade
     _lazy-loading : l'entité récupérée ne contient pas les attributs "entités" car trop lourd. Il faut soit refaire une requête pour récupérérer un attribut entité, ou mieux : faire un join entre tables lors de la première requête
     _les relations entre entités
     *OneToOne
