@@ -424,7 +424,15 @@ Symfony propose des services de gestion de base de données nommés ORM(Object-Rel
 \underline{Exemple}: le diagramme UML ci-dessous(Fig. \ref{fig:uml})  montre la relation OneToOne unidirectionnelle entre les entités \textit{User} et \textit{Card}. Imaginons qu'on souhaite récupérer la carte d'une instance \$user de \textit{User}.\\
 sans ORM : \verb!SELECT User,Card FROM User JOIN Card WHERE id=$user.id ! \\
 avec un ORM : \verb!$user->getCard()! \\
-Même si l'écriture est différente et bien plus lisible avec l'utilisation d'un ORM, car on n'utilise plus des requêtes mais des fonctions, il faut être conscient que ce sont bien des requêtes SQL qui sont produites par le service d'ORM pour accéder à une entité dans la base de données Symfony. \\
+
+Même si l'écriture est différente et bien plus lisible avec l'utilisation d'un ORM, car on n'écrit plus des requêtes mais des fonctions, il faut être conscient que ce sont bien des requêtes SQL qui sont produites par le service d'ORM pour accéder à une entité dans la base de données Symfony. Un usage abusif de ces fonctions pourrait donc avoir un impact négatif sur les performances de l'application, car le nombre de requêtes effectuées doit être minimisé.\\
+On peut faire les associations suivantes d'interprétation par un ORM :
+\begin{itemize}
+\item définition d'une classe Entité \textit{A} : une table en base de données
+\item une instance de \textit{A}(une entité) : une entrée dans la table
+\item un attribut de \textit{A} : un champ dans le table
+\item une relation entre \textit{A} et une classe Entité \textit{B} : un champ dans la table contenant une clé étrangère référençant l'entité de classe \textit{B} liée.
+\end{itemize}
 Ainsi, le diagramme UML(Fig. \ref{fig:uml}) décrit les différentes entités implémentées.
 \begin{figure}[h!]
     \centering
@@ -432,18 +440,17 @@ Ainsi, le diagramme UML(Fig. \ref{fig:uml}) décrit les différentes entités implé
     \caption{Diagramme UML décrivant les modèles du bundle UserBundle}
     \label{fig:uml}
 \end{figure}
-Dans une relation entre entités, l'entité dite \textit{propriétaire} est celle qui contient la référence(clé étrangère) vers l'entité dite \textit{inverse}. Il s'agit d'une information importante de gestion des données, notamment lors de la gestion de la suppression d'entités. En effet, on ne peut supprimer une entité(entrée dans la table) que si les entités liées(champs contenant des clés étrangères) ont été supprimées avant, pour éviter une \textbf{cassure} de la base de données.\\
-Les relations peuvent être unidirectionnelles ou bidirectionnelles.
-
+Dans une relation entre entités, l'entité dite \textit{propriétaire} est celle qui contient la référence(clé étrangère) vers l'entité dite \textit{inverse}. Il s'agit d'une information importante pour la gestion des données, notamment pour la suppression d'entités. En effet, on ne peut supprimer une entité(entrée dans la table) que si les entités liées par une relation(champs contenant des clés étrangères) ont été supprimées avant, pour éviter une \textbf{cassure} de la base de données.\\
+Les relations peuvent être unidirectionnelles ou bidirectionnelles. \\ \\
 L'intérêt d'avoir une relation bidirectionnelle entre les entités \textit{User} et \textit{Beneficiary} est de pouvoir accéder aux sources d'un bénéficiaire : savoir quels professionnels ont enregistré un bénéficiaire donné dans leur liste de favoris. Cela servira d'indicateur d'activité sur la plateforme. Autrement, une relation unidirectionnelle \textit{Beneficiary} $\rightarrow$ \textit{User} aurait été suffisante. \\
 Enfin, la relation unidirectionnelle ManyToMany de l'entité \textit{User} avec elle-même est pour la gestion des référents : Un groupe local peut être référent de plusieurs professionnels, et un professionnel peut avoir plusieurs référents. \\
 
-En plus des données classiques du membre, deux attributs pour comptabiliser le nombre d'essais de saisie de mot de passe ou de la carte de sécurité ont été ajoutés : passwordTries et cardKeyTries. Ainsi, au bout de trois essais infructueux, l'utilisateur est bloqué. \\
+En plus des données classiques du membre, deux attributs pour comptabiliser le nombre d'essais de saisie de mot de passe ou de la carte de sécurité ont été ajoutés : passwordTries et cardKeyTries. Ainsi, au bout de trois essais infructueux, l'espace membre est bloqué. \\
 La table zipCity contient toutes les villes du département de l'Isère, car englobe le SCoT. \\
 
-\paragraph{Création d'une entité pour les transactions ?}
-Cette question s'est posée après réalisation d'un manquement à une spécification : toute transaction doit contenir un intitulé(court) et un motif long(voir \ref{subsec:probleme}). Hors, les classes Cyclos contenant les données des transactions ne sont munies que d'un attribut "description" ne permettant pas de distinguer le motif de l'intitulé. Il faudrait donc, pour respecter la spécification, créer une entité \textit{Transaction}, la lier à une transaction réalisée par un identifiant unique(à l'image de l'attribut \textit{cyclosID} de la classe \textit{User}), et rajouter à cette entité des attributs "motif" et "intitulé". \\ \\
-Cependant, une difficulté rencontrée n'a pas permis de réaliser cette entité. Cette difficulté concerne la maîtrise de la gestion des données  liées aux transactions dans Cyclos. Elle repose sur deux caractéristiques : la complexité du système et une documentation trompeuse(un attribut manquant et nomenclature qui prête à confusion). 
+\paragraph{Création d'une entité pour les transactions ?} ~\\
+Cette question s'est posée après réalisation d'un manquement à une spécification : toute transaction doit contenir un intitulé(court) et un motif long(voir \ref{subsec:probleme}). Hors, les classes Cyclos contenant les données des transactions ne sont munies que d'un attribut "description" ne permettant pas de distinguer le motif de l'intitulé. Il faudrait donc, pour respecter la spécification, créer une entité \textit{Transaction}, la lier à l'objet Cyclos équivalent par un identifiant unique(à l'image de l'attribut \textit{cyclosID} de la classe \textit{User}), et rajouter à cette entité des attributs "motif" et "intitulé". \\ \\
+Cependant, une difficulté rencontrée n'a pas permis de réaliser cette entité. Cette difficulté concerne la maîtrise de la gestion des données  liées aux transactions dans Cyclos. Elle repose sur deux caractéristiques : la complexité du système et une documentation trompeuse(un attribut manquant et une nomenclature qui prête à confusion). Dans le temps imparti, cette correction n'a donc pas pu être achevée.
 
 \subsection{Fonctionnement de l'application} \label{subsec:fonctionnement}
 ~~ A partir de l'analyse effectuée dans les sous-sections précédentes(\ref{subsec:cyclos} et \ref{subsec:symfony}), un workflow simplifié du fonctionnement de l'application web peut être présenté comme suit.
@@ -716,8 +723,60 @@ Toutes les failles présentées ci-dessus et la partie sur la gestion des mots de 
 %
 %
 %
-%Ces premières semaines de stage m'ont permis de réaliser à quel point la qualité de la gestion de projet dépendait de la maîtrise des interfaces entre les différentes parties prenantes, dont voici une liste non exhaustive: création/maintien d'une dynamique de groupe, connaissance de ses partenaires de travail, besoins des partenaires professionnels, objectif de mutualisation des technologies des différentes monnaies locales au niveau national, possibilités offertes par les outils identifiés, budget accordé au projet, le cadre juridique de la monnaie électronique(dossier agréé par l'Autorité de Contrôle Prudentiel et de Résolution) et l'éthique de la gestion des données. 
+%Ces premières semaines de stage m'ont permis de réaliser à quel point la qualité de la gestion de projet dépendait de la maîtrise des interfaces entre les différentes parties prenantes, dont voici une liste non exhaustive: création/maintien d'une dynamique de groupe, connaissance de ses partenaires de travail, besoins des partenaires professionnels, objectif de mutualisation des technologies des différentes monnaies locales au niveau national, possibilités offertes par les outils identifiés, budget accordé au projet, le cadre juridique de la monnaie électronique(dossier agréé par l'Autorité de Contrôle Prudentiel et de Résolution) et l'éthique de la gestion des données.
+\section{La phase de tests} \label{sec:tests}
+~~ Dans le cadre d'un projet web, les tests se déroulent tout au long du développement. En effet, chaque nouvelle action de contrôleur implémentée est suivie de vérifications "à la main"	permettant de s'assurer des résultats obtenus. Cependant, au fur et à mesure que l'application croît, que les entités sont de plus en plus liées les unes aux autres, l'automatisation des tests permet d'éviter, notamment, que des fonctionnalités précédemment opérationnelles soient par la suite exposées à des erreurs.
+\subsection{La phase de pré-tests} \label{subsec:pretests}
+~~ Pour écrire des tests efficacement, il faut être en mesure de contrôler le contenu de la base de données initialement et après chaque action réalisée lors d'un test. Comme décrit dans le paragraphe \ref{par:bdd} sur les bases de données, il y a deux bases de données à gérer, et doivent concorder à tout instant. Ainsi, il faut les construire de sorte à être parfaitement anticipables lors des tests. Cependant, manipuler la base de données Cyclos est loin d'être chose aisée, comme en témoigne ce passage tiré de la documentation officielle de Cyclos \cite{cyclos_doc}
+\begin{quotation}
+\textit{In most cases we would recommend to just start over and manually copy the products, configurations, accounts and transaction types, field etc. you created. For most people this is the best solution. \\ \\
+ Only for very advanced users that know a lot about database, ...}
+\end{quotation} 
+Cela remet en question l'idée de départ qui était de créer un réseau indépendant pour les tests(voir Fig.\ref{fig:cyclos_config}), qui pourrait être copié, réinitialisé etc. mais de conserver une unique base de données Cyclos. \\
+Hors il faut, à chaque lancement du script de tests, créer une nouvelle base de données de tests(et donc supprimer l'ancienne), réinstaller la configuration "à la main" de tout le système, insérer une liste d'utilisateurs et de transactions pour avoir un environnement opérationnel. \\ \\
+Étant inconcevable qu'un script contienne une partie manuelle, il a été nécessaire d'installer Cyclos une première fois avec toute la configuration, de la sauvegarder dans un fichier de backup au format sql nommé \textit{backup.sql}. Ensuite, le script de pré-tests suit les étapes suivantes :
+\begin{enumerate}
+\item Supprimer l'ancienne base de données de tests Cyclos
+\item Supprimer l'ancienne base de données de tests Symfony
+\item Créer une nouvelle base de données de tests Cyclos
+\item Créer une nouvelle base de données de tests Symfony
+\item Importer \textit{backup.sql}. Cela permet de ne pas avoir à recommencer les étapes de configuration
+\item Importer les utilisateurs fournis par \textit{members.csv} via les services web
+\item Importer les transactions fournies par \textit{transactions.csv} via les services web
+\item Créer les équivalents Symfony de tous les utilisateurs Cyclos et définir des référents pour les professionnels en respectant les rôles tels que décrits dans la partie \ref{subsec:autorisation}
+\end{enumerate}
+Une fois toutes ces étapes achevées, on obtient deux bases de données initialisées, cohérentes entre elles, avec des utilisateurs ayant des rôles différents et un historique de transactions. 
+\paragraph{Import de données}
+Cyclos propose une fonctionnalité permettant d'importer des données depuis des tableurs au format csv. Pour cela, il faut écrire un script compréhensible par le logiciel, écrit en langage Groovy(très proche de Java) qu'on appelle à l'aide de la classe PHP \verb!CustomScriptService! et depuis lequel on charge le contenu des fichiers csv. Cela permet au développeur de personnaliser sa liste des utilisateurs et la liste des transactions en fpnction des tests qu'il souhaite réaliser. \\ \\
+~~ Si l'étape 8 est lancée immédiatement après l'étape 7, le script plante car elle est lancée alors que l'import des étapes 6 et 7 n'est pas terminé. Pour cette raison, un délai doit être placé entre les deux étapes pour s'assurer que la base de donnée est à jour lors du lancement de l'étape 8. \\ \\
+L'idée de cette partie est de montrer que le processus de pré-tests est très fastidieux mais nécessaire. De plus, l'import de la base de donnée(étape 5) prend plusieurs minutes. Hors, un script de tests trop long peut inciter le développeur à ne pas s'en servir. Il serait donc intéressant d'apprendre, à l'avenir, à manipuler la base de données Cyclos à l'aide d'un script SQL, afin de minimiser la durée de la phase de pré-tests. 
+\subsection{Les tests fonctionnels} \label{subsec:tests_fonctionnels}
+Une fois la phase de pré-tests achevée, l'application doit être testée.
+Les tests fonctionnels ont pour objectif de tester les fonctionnalités et de vérifier que l'ajout d'une nouvelle n'altère pas le reste de l'application. Pour écrire un test fonctionnel dans le cadre d'une application web, on a besoin principalement de trois éléments :
+\begin{itemize}
+\item un client (jouant le rôle du navigateur)
+\item une requête HTTP dirigeant vers la page à tester
+\item une réponse HTTP pour vérifier que le contenu est bien celui attendu	
+\end{itemize}  
 
+\paragraph{Framework de tests} ~\\
+Symfony fournit un framework de tests nommé \textit{PHPUnit} permettant de réaliser des tests unitaires et fonctionnels. Il a donc été utilisé dans le projet. \\ 
+Ci-dessous un exemple typique de test fonctionnel avec \textit{PHPUnit} pour la fonctionnalité du périmètre fonctionnel "ajout d'un nouveau bénéficiaire" (voir \ref{subsec:probleme} ). Cette opération est considérée comme sensible. On s'attend donc à ce qu'une identification par carte soit demandée au client.
+\begin{verbatim}
+$client = static::createClient();      //création du client
+$crawler = $client->request('GET', '/beneficiary/new'); //envoi de la requête HTTP
+$form = $crawler->selectButton('card_submit')->form(); //récupération du formulaire
+$form['card[fields]']->setValue('1111'); //remplissage du champ
+$crawler = $this->client->submit($form); //soumission du formulaire                               
+
+// vérification du contenu de la page retournée
+$this->assertSame(1,$crawler->filter('html:contains("clé valide")')->count()); 
+\end{verbatim}
+D'après cet exemple, on peut constater qu'il y a deux éléments prépondérants pour réaliser un test fonctionnel. D'une part, le \textit{client} effectue les requêtes HTTP, soumet les formulaires et récupère les réponses. D'autre part, le \textit{crawler} permet de parcourir le code HTML via le DOM(Document Object Model). Il s'agit d'une API utilisée notamment en Javascript pour accéder aux différentes balises du code HTML d'une page web. \\ \\
+On comprend dès lors l'intérêt de maîtriser le contenu de la base de données avant la phase de tests(voir \ref{subsec:pretests}). En effet, il faut être en mesure d'anticiper le comportement de l'application en fonction des données pour pouvoir la tester. \\
+\underline{Exemple} : En environnement de test, toutes les entrées de toutes les cartes de sécurité valent \verb!1111!. Le cas échéant, comment s'assurer du comportement pour une saisie valide/invalide sachant que les entrées sont générées aléatoirement ? \\ \\ \\
+
+La phase de tests est sans nul doute la partie demandant le plus d'améliorations dans le projet. En effet, la phase de pré-tests est très fastidieuse et les scéniaros de tests écrits se limitent à une seule fonctionnalité, ne combinant pas les séquences d'actions qu'un utilisateur pourrait effectué. L'outil d'intégration continue \textit{Travis CI} a été ajouté au projet. 
 
 \newpage
 \section{Conclusion} \label{sec:conclusion}

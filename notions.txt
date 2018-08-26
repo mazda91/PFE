@@ -12,28 +12,6 @@ _les tests:
     *tests d'intrusion
     *tests utilisateur (UX)
 
-_les tests d'intégration: PHPUnit
-    Pour écrire des tests efficacement, il faut être en mesure de contrôler le contenu de la base de données en interne initialement et après chaque action réalisée lors d'un test. Comme décrit plus haut, il y a deux bases de données à gérer, et doivent concorder à tout instant. Autant la BDD Doctrine est plutôt aisée à manipuler, autant la BDD Cyclos est très complexe à prendre en main, et nécessite un niveau de compétences en SQL que je n'ai pas.
-    *Processus de mise en place des bases de données pré-tests
-        _réinitialiser la base de données Doctrine, puis insérer l'ensemble des villes et leur code postaux (présents dans un fichier)
-         Etant donné qu'il s'agit ici d'une monnaie locale, les villes présentes correspondent à l'Isère. L'idée étant, dans le futur, de maniupler de façon plus flexible les villes d'où peuvent ressortir les professionnels qui s'inscrivenet. Toutes les villes de l'Isère n'appartiennent pas au SCOT(Schéma de Cohérence Territorial). Celui-ci étant amené à évoluer
-        _réinitialiser la Base de données cyclos. Il est impossible de "restaurer" une base de données Cyclos, c-a-d revenir à un état antérieur de la BDD. Il existe 2 options :
-            *manipuler la BDD en interne pour y parvenir : option exclue 
-            *créer une nouvelle instance de cyclos, la remplir avec des données d'un fichier de backup (fichier qui doit être créé à l'installation une fois la configuration terminée), puis importer des données enregistrées dans des tableurs au format CSV via un script écrit en groovy(~= java) et appeler via les webservices et l'API PHP : option retenue
-            *avantage : il est facile de contrôler les utilisateurs/les paiments présents initialement :  simples tableaux à remplir
-            *inconvénients :
-                            à partir des utilisateurs importés dans Cyclos, il faut créer leur équivalent Doctrine. Cette opération doit être réalisée une fois qu'on est sûr que la BDD Cyclos a été entièrement mise à jour. Cela ne peut se faire qu'en contrôlant le nombre d'utilisateurs présent en BDD(doit correspondre au nombre d'utilisateurs dans le fichier à importer) 
-                            on ne peut ajouter que des utilisateurs ayant un rôle de "membre". Hors, les tests auraient également besoin d'être réalisés avec des utilisateurs de type administrateurs. Tout est donc réalisé avec le super_admin créé au départ   
-                            on ne peut ajouter que des paiements dits "simples", c-a-d pas les paiements automatiques(récurrents)        
-                            
-        _lancer les tests PHPUnit tests fonctionnels
- 
-    *inconvénient : la mise en place pré-test prend beaucoup de temps, beaucoup trop de temps malgré l'automatisation du script. En effet,          en plus des commandes en elles-mêmes, un enchaînement trop rapide(par exemple tentative d'accès à la BDD Cyclos juste après sa création) peut entraîner une erreur étant donné si la BDD cyclos n'est pas complètement initialisée/editée. Ainsi, il est préférable de mettre un temps d'attente entre certaines commandes (temps qui va très probablement dépendre de la machine utilisatrice ..) ce qui le rend difficile à utiliser. Il faut bien décrire au développeur reprenant le code l'intérêt de ces délais présents dans le script et d'essayer lui-même afin de les adatper. L'utilisation en mode "boîte noire" fiable est donc impossible. 
-    
-_les tests de montée en charge
-    Contrôler le contenu des bases de données avec un client unique est déjà chronophage.  Comment réaliser des tests de montée en charge ?     On peut tester des actions indépendantes de la base de données Cyclos. Comment tester les paiements ? les isncriptions ? ...
-
-_l'intégration continue : Travis CL
 
 
 _fermeture de compte : le compte ne peut plus être supprimé à partir du moment ou la moindre opération a eu lieu. En revanche, on peut dissocier un groupe d'utilisateurs d'un produit, et donc d'un compte, de sorte à le rendre invisible des utilisateurs. 
